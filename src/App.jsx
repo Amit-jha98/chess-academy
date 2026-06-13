@@ -71,6 +71,18 @@ const pageMeta = {
     description:
       'Contact Rituraj Chess Academy in Ghaziabad for chess classes, program schedules, and admission inquiries.',
   },
+  terms: {
+    title: 'Terms & Conditions | Rituraj Chess Academy',
+    description: 'Terms and Conditions for enrollment and use of Rituraj Chess Academy services.',
+  },
+  privacy: {
+    title: 'Privacy Policy | Rituraj Chess Academy',
+    description: 'Privacy Policy outlining how Rituraj Chess Academy collects, uses, and protects your data.',
+  },
+  refund: {
+    title: 'Refund Policy | Rituraj Chess Academy',
+    description: 'Refund and cancellation policy for Rituraj Chess Academy programs.',
+  },
 };
 
 const highlights = [
@@ -413,6 +425,9 @@ function App() {
             submitting={submitting}
           />
         )}
+        {activePage === 'terms' && <TermsPage />}
+        {activePage === 'privacy' && <PrivacyPage />}
+        {activePage === 'refund' && <RefundPage />}
       </main>
 
       <FloatingWhatsApp />
@@ -426,7 +441,7 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
     <header className="site-header">
       <button className="brand" onClick={() => goTo('home')} type="button">
         <span className="brand-mark">
-          <Crown size={24} />
+          <img src="/Photos/chess_logo_premium.png" alt="Rituraj Chess Academy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </span>
         <span>
           <strong>Rituraj Chess Academy</strong>
@@ -626,6 +641,7 @@ function AboutPage({ goTo }) {
       icon={Award}
       title="About the Academy"
       text="A disciplined chess learning environment built around fundamentals, analysis, and competitive confidence."
+      bgImage="/Photos/chess_bg_1.png"
     >
       <button className="primary-button" onClick={() => goTo('contact')} type="button">
         Start Admission Inquiry
@@ -634,10 +650,18 @@ function AboutPage({ goTo }) {
   );
 }
 
-function PageIntro({ icon: Icon, title, text, children }) {
+function PageIntro({ icon: Icon, title, text, bgImage, children }) {
+  const bgStyle = bgImage 
+    ? { 
+        background: `linear-gradient(90deg, rgba(16, 22, 36, 0.92), rgba(16, 22, 36, 0.65)), url("${bgImage}")`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+      }
+    : {};
+
   return (
     <>
-      <section className="page-intro">
+      <section className="page-intro" style={bgStyle}>
         <div className="section-wrap page-intro-grid">
           <div>
             <span className="eyebrow">
@@ -795,19 +819,12 @@ function CourseGrid({ compact = false }) {
 function TrainersPage() {
   return (
     <>
-      <section className="page-intro compact-intro">
-        <div className="section-wrap">
-          <span className="eyebrow">
-            <Users size={16} />
-            Trainer Profiles
-          </span>
-          <h1>Coaches who teach the thinking behind each move.</h1>
-          <p>
-            Profiles include qualifications, experience, and achievement focus
-            areas so students can find the right training environment.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        icon={Users}
+        title="Trainer Profiles"
+        text="Profiles include qualifications, experience, and achievement focus areas so students can find the right training environment."
+        bgImage="/Photos/chess_bg_3.png"
+      />
       <section className="section-wrap trainer-grid">
         {trainers.map((trainer) => (
           <article className="trainer-card" key={trainer.name}>
@@ -832,19 +849,12 @@ function TrainersPage() {
 function GalleryPage() {
   return (
     <>
-      <section className="page-intro compact-intro">
-        <div className="section-wrap">
-          <span className="eyebrow">
-            <Image size={16} />
-            Gallery
-          </span>
-          <h1>Tournaments, events, and training sessions.</h1>
-          <p>
-            A visual gallery prepared for academy photographs, event images,
-            classroom snapshots, and tournament memories.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        icon={Image}
+        title="Gallery"
+        text="A visual gallery prepared for academy photographs, event images, classroom snapshots, and tournament memories."
+        bgImage="/Photos/chess_bg_4.png"
+      />
       <section className="section-wrap gallery-grid">
         {gallery.map((item) => (
           <article className="gallery-card" key={item.title}>
@@ -884,19 +894,12 @@ function TestimonialsPreview({ goTo }) {
 function TestimonialsPage({ goTo }) {
   return (
     <>
-      <section className="page-intro compact-intro">
-        <div className="section-wrap">
-          <span className="eyebrow">
-            <MessageCircle size={16} />
-            Testimonials
-          </span>
-          <h1>Student reviews, parent feedback, and success stories.</h1>
-          <p>
-            Feedback from learners who improved their confidence, calculation,
-            patience, and tournament readiness.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        icon={Star}
+        title="Student Stories"
+        text="Read experiences from our students and parents. Real feedback on training methodology, improvement timelines, and tournament success."
+        bgImage="/Photos/chess_abstract_bg.png"
+      />
       <section className="section-wrap testimonial-grid">
         {testimonials.map((item) => (
           <TestimonialCard key={item.name} item={item} />
@@ -934,19 +937,12 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
 
   return (
     <>
-      <section className="page-intro compact-intro">
-        <div className="section-wrap">
-          <span className="eyebrow">
-            <Mail size={16} />
-            Contact Us
-          </span>
-          <h1>Start a chess training inquiry.</h1>
-          <p>
-            Share student details, preferred program, and your message. The form
-            is configured to send inquiries by SMTP when server credentials are added.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        icon={Mail}
+        title="Start a chess training inquiry."
+        text="Share student details, preferred program, and your message. The form is configured to send inquiries by SMTP when server credentials are added."
+        bgImage="/Photos/chess_bg_1.png"
+      />
       <section className="section-wrap contact-grid">
         <div className="contact-info">
           <article>
@@ -1107,6 +1103,12 @@ function Footer({ goTo }) {
           ))}
         </div>
         <div>
+          <h2>Legal</h2>
+          <button onClick={() => goTo('terms')} type="button">Terms & Conditions</button>
+          <button onClick={() => goTo('privacy')} type="button">Privacy Policy</button>
+          <button onClick={() => goTo('refund')} type="button">Refund Policy</button>
+        </div>
+        <div>
           <h2>Contact</h2>
           <a href="mailto:riturajchessacademy@gmail.com">riturajchessacademy@gmail.com</a>
           <a href="tel:+918076940504">+91 8076 940 504</a>
@@ -1188,6 +1190,90 @@ function WelcomePopup() {
             <img src="/Photos/whatsapp_logo.png" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '8px', objectFit: 'contain' }} />
             Chat with us on WhatsApp
           </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TermsPage() {
+  return (
+    <div className="section-wrap compact-intro">
+      <div className="section-heading" style={{ gridTemplateColumns: '1fr', textAlign: 'center' }}>
+        <h1>Terms & Conditions</h1>
+        <p>Please read these terms carefully before enrolling.</p>
+      </div>
+      <div className="split-section" style={{ display: 'block' }}>
+        <div className="split-copy" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '0 20px' }}>
+          <h2>1. Introduction</h2>
+          <p>Welcome to Rituraj Chess Academy. By accessing our website or enrolling in our courses, you agree to be bound by these Terms and Conditions. Please review them carefully.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>2. Enrollment and Fees</h2>
+          <p>All program fees must be paid in advance. Your enrollment is only confirmed upon successful receipt of the payment. We reserve the right to modify our fees at any time, but changes will not affect already paid ongoing sessions.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>3. Code of Conduct</h2>
+          <p>Students must maintain discipline, respect their trainers and peers, and demonstrate good sportsmanship at all times. The academy reserves the right to terminate enrollment for any student exhibiting disruptive or disrespectful behavior.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>4. Intellectual Property</h2>
+          <p>All training materials, including puzzles, videos, study guides, and literature provided by the academy, remain the intellectual property of Rituraj Chess Academy and cannot be redistributed, sold, or shared publicly without express permission.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>5. Limitation of Liability</h2>
+          <p>Rituraj Chess Academy is not liable for any direct, indirect, incidental, or consequential damages resulting from the use of our services, or any tournament results. Chess is a competitive sport and results are dependent on the individual effort of the student.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PrivacyPage() {
+  return (
+    <div className="section-wrap compact-intro">
+      <div className="section-heading" style={{ gridTemplateColumns: '1fr', textAlign: 'center' }}>
+        <h1>Privacy Policy</h1>
+        <p>How we collect and protect your data.</p>
+      </div>
+      <div className="split-section" style={{ display: 'block' }}>
+        <div className="split-copy" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '0 20px' }}>
+          <h2>1. Information We Collect</h2>
+          <p>We collect personal information such as the student's name, parent's name, email address, phone number, and age when you register for a class or submit an inquiry through our website.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>2. How We Use Your Information</h2>
+          <p>Your information is used strictly to process enrollments, communicate updates regarding classes and schedules, and provide customer support. We do not sell or rent your data to any third parties.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>3. Data Protection</h2>
+          <p>We implement appropriate technical and organizational measures to safeguard your personal data against unauthorized access, loss, or disclosure. Our site utilizes SSL encryption to protect any data sent through forms.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>4. Third-Party Services</h2>
+          <p>We may use third-party services (such as payment processors or email delivery systems) which have their own privacy policies in respect to the information we are required to provide to them for transactions.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>5. Contact Us</h2>
+          <p>If you have any questions or concerns about this Privacy Policy, or if you wish to have your data removed, please contact us at riturajchessacademy@gmail.com.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RefundPage() {
+  return (
+    <div className="section-wrap compact-intro">
+      <div className="section-heading" style={{ gridTemplateColumns: '1fr', textAlign: 'center' }}>
+        <h1>Refund & Cancellation Policy</h1>
+        <p>Our policies regarding cancellations and fee refunds.</p>
+      </div>
+      <div className="split-section" style={{ display: 'block' }}>
+        <div className="split-copy" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '0 20px' }}>
+          <h2>1. General Refund Policy</h2>
+          <p>Fees once paid are generally non-refundable. We highly encourage parents and students to be certain of their commitment before completing enrollment and payment for a training block.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>2. Cancellation Before Course Start</h2>
+          <p>If a cancellation request is made at least 48 hours before the start of the first session of a new enrollment period, a refund may be issued minus a small administrative processing fee.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>3. Mid-Course Cancellation</h2>
+          <p>No refunds will be provided for mid-course cancellations or for classes missed by the student. In special circumstances (such as medical emergencies), we may offer class credits for future use at the discretion of the academy director.</p>
+          
+          <h2 style={{ marginTop: '30px' }}>4. Academy Cancellations</h2>
+          <p>If Rituraj Chess Academy must cancel a class due to trainer illness or emergency, a make-up class will be scheduled. If a make-up class cannot be scheduled, a proportional credit will be applied to the next billing cycle.</p>
         </div>
       </div>
     </div>

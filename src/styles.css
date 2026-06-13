@@ -743,7 +743,7 @@ img {
   color: #fff;
   background:
     linear-gradient(135deg, rgba(16, 22, 36, 0.94), rgba(25, 79, 69, 0.92)),
-    url("/Photos/training-moment-group.jpeg");
+    url("/Photos/chess_bg_testimony.png");
   background-position: center;
   background-size: cover;
 }
@@ -1178,7 +1178,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.7fr 0.9fr;
+  grid-template-columns: 1.5fr 0.7fr 0.7fr 0.9fr;
   gap: 34px;
 }
 
