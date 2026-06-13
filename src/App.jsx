@@ -22,17 +22,18 @@ import {
   X,
 } from 'lucide-react';
 import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 
 const ChessHeroScene = lazy(() => import('./ChessHeroScene.jsx'));
 
 const navItems = [
-  { label: 'Home', id: 'home' },
-  { label: 'About', id: 'about' },
-  { label: 'Courses', id: 'courses' },
-  { label: 'Trainers', id: 'trainers' },
-  { label: 'Gallery', id: 'gallery' },
-  { label: 'Testimonials', id: 'testimonials' },
-  { label: 'Contact', id: 'contact' },
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Courses', path: '/courses' },
+  { label: 'Trainers', path: '/trainers' },
+  { label: 'Gallery', path: '/gallery' },
+  { label: 'Testimonials', path: '/testimonials' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 const pageMeta = {
@@ -139,29 +140,35 @@ const trainers = [
   {
     name: 'Rituraj Singh',
     role: 'Head Coach',
-    image:
-      'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=900&q=80',
-    details:
-      'Experienced chess mentor focused on tactical clarity, game analysis, and tournament readiness.',
-    stats: ['FIDE-style training', 'Junior tournament mentor', '12+ years coaching'],
+    image: '/Photos/Rituraj Singh.jpeg',
+    details: 'Experienced chess mentor focused on tactical clarity, game analysis, and tournament readiness.',
+    stats: [
+      'Selected for Asian and World Amateur Chess Championships (2024)',
+      'International FIDE-rated Chess Player',
+      'Winner of Below 1600 Category Prize in Delhi',
+      'Participated in Delhi International Category-C Tournament (2017 & 2018)',
+      'Bronze Medalist – North Zone University (2018, 2019, 2020, 2022)',
+      'Winner of Below 1600 Category – Ankit Shakshi Tournament, Jaipur'
+    ],
   },
   {
-    name: 'Ananya Sharma',
-    role: 'Junior Program Coach',
-    image:
-      'https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?auto=format&fit=crop&w=900&q=80',
-    details:
-      'Builds strong fundamentals for young learners through drills, puzzles, and friendly match play.',
-    stats: ['Beginner specialist', 'Puzzle curriculum', 'Parent progress reports'],
-  },
-  {
-    name: 'Vikram Chauhan',
-    role: 'Tournament Coach',
-    image:
-      'https://images.unsplash.com/photo-1585229252003-92dd11db4e31?auto=format&fit=crop&w=900&q=80',
-    details:
-      'Helps students prepare for rated events with notation review, opening plans, and calm execution.',
-    stats: ['Advanced batches', 'Game analysis', 'Time-control coaching'],
+    name: 'Narayan Gaha',
+    role: 'Senior Coach',
+    image: '/Photos/Narayan Gaha.jpg',
+    details: 'Expert in competitive match play, opening theory, and building tournament resilience.',
+    stats: [
+      'World FIDE RATING 1753',
+      'International FIDE rated chess player',
+      'Represent INDIA in 2016 ASIAN JUNIOR CHAMPIONSHIP. (DELHI)',
+      '13 times won Open district chess championship',
+      'Won U19 CBSE NATIONAL INDIVIDUAL (2017-2018)',
+      'Participate in ALL INDIA UNIVERSITY at Dindigul TAMIL NADU',
+      'Won U.P state U19 (2015) & Represent U.P in U19 National (Tamil Nadu)',
+      'Intercollegiate Chess tournament winner in 2019, 2021, 2022',
+      'Participate in Delhi International open grandmaster chess tournament 2016, 2017',
+      'Participate in Delhi International category C tournament 2016, 2017, 2018, and 2019',
+      'Won 1st new Delhi open international rapid tournament below 1800 category in Thyagaraj Stadium 2025'
+    ],
   },
 ];
 
@@ -318,7 +325,22 @@ const achievements = [
 ];
 
 function App() {
-  const [activePage, setActivePage] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const currentPath = location.pathname;
+  let activePage = 'home';
+  if (currentPath === '/') activePage = 'home';
+  else if (currentPath === '/about') activePage = 'about';
+  else if (currentPath === '/courses') activePage = 'courses';
+  else if (currentPath === '/trainers') activePage = 'trainers';
+  else if (currentPath === '/gallery') activePage = 'gallery';
+  else if (currentPath === '/testimonials') activePage = 'testimonials';
+  else if (currentPath === '/contact') activePage = 'contact';
+  else if (currentPath === '/terms') activePage = 'terms';
+  else if (currentPath === '/privacy') activePage = 'privacy';
+  else if (currentPath === '/refund') activePage = 'refund';
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
@@ -331,8 +353,8 @@ function App() {
   const [submitting, setSubmitting] = useState(false);
 
   const activeLabel = useMemo(
-    () => navItems.find((item) => item.id === activePage)?.label || 'Home',
-    [activePage],
+    () => navItems.find((item) => item.path === currentPath)?.label || 'Home',
+    [currentPath],
   );
 
   useEffect(() => {
@@ -356,8 +378,9 @@ function App() {
   }, [activePage]);
 
   const goTo = (id) => {
-    setActivePage(id);
     setMenuOpen(false);
+    if (id === 'home') navigate('/');
+    else navigate(`/${id}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -410,28 +433,30 @@ function App() {
       />
 
       <main>
-        {activePage === 'home' && <HomePage goTo={goTo} />}
-        {activePage === 'about' && <AboutPage goTo={goTo} />}
-        {activePage === 'courses' && <CoursesPage goTo={goTo} />}
-        {activePage === 'trainers' && <TrainersPage />}
-        {activePage === 'gallery' && <GalleryPage />}
-        {activePage === 'testimonials' && <TestimonialsPage goTo={goTo} />}
-        {activePage === 'contact' && (
-          <ContactPage
-            formState={formState}
-            setFormState={setFormState}
-            handleSubmit={handleSubmit}
-            status={status}
-            submitting={submitting}
-          />
-        )}
-        {activePage === 'terms' && <TermsPage />}
-        {activePage === 'privacy' && <PrivacyPage />}
-        {activePage === 'refund' && <RefundPage />}
+        <Routes>
+          <Route path="/" element={<HomePage goTo={goTo} />} />
+          <Route path="/about" element={<AboutPage goTo={goTo} />} />
+          <Route path="/courses" element={<CoursesPage goTo={goTo} />} />
+          <Route path="/trainers" element={<TrainersPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage goTo={goTo} />} />
+          <Route path="/contact" element={
+            <ContactPage
+              formState={formState}
+              setFormState={setFormState}
+              handleSubmit={handleSubmit}
+              status={status}
+              submitting={submitting}
+            />
+          } />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/refund" element={<RefundPage />} />
+        </Routes>
       </main>
 
       <FloatingWhatsApp />
-      <Footer goTo={goTo} />
+      <Footer />
     </div>
   );
 }
@@ -439,33 +464,32 @@ function App() {
 function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
   return (
     <header className="site-header">
-      <button className="brand" onClick={() => goTo('home')} type="button">
+      <Link className="brand" to="/">
         <span className="brand-mark">
-          <img src="/Photos/chess_logo_premium.png" alt="Rituraj Chess Academy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="Rituraj Chess Academy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </span>
         <span>
           <strong>Rituraj Chess Academy</strong>
           <small>Ghaziabad</small>
         </span>
-      </button>
+      </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <button
-            className={activePage === item.id ? 'active' : ''}
-            key={item.id}
-            onClick={() => goTo(item.id)}
-            type="button"
+          <Link
+            className={activePage === (item.path === '/' ? 'home' : item.path.substring(1)) ? 'active' : ''}
+            key={item.path}
+            to={item.path}
           >
             {item.label}
-          </button>
+          </Link>
         ))}
       </nav>
 
       <div className="header-actions">
-        <button className="ghost-button" onClick={() => goTo('contact')} type="button">
+        <Link className="ghost-button" to="/contact">
           Enquire
-        </button>
+        </Link>
         <button
           className="menu-button"
           onClick={() => setMenuOpen((value) => !value)}
@@ -480,15 +504,15 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
         <div className="mobile-nav">
           <span>{activeLabel}</span>
           {navItems.map((item) => (
-            <button
-              className={activePage === item.id ? 'active' : ''}
-              key={item.id}
-              onClick={() => goTo(item.id)}
-              type="button"
+            <Link
+              className={activePage === (item.path === '/' ? 'home' : item.path.substring(1)) ? 'active' : ''}
+              key={item.path}
+              to={item.path}
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
               <ChevronRight size={16} />
-            </button>
+            </Link>
           ))}
         </div>
       )}
@@ -637,47 +661,18 @@ function HomePage({ goTo }) {
 
 function AboutPage({ goTo }) {
   return (
-    <PageIntro
-      icon={Award}
-      title="About the Academy"
-      text="A disciplined chess learning environment built around fundamentals, analysis, and competitive confidence."
-      bgImage="/Photos/chess_bg_1.png"
-    >
-      <button className="primary-button" onClick={() => goTo('contact')} type="button">
-        Start Admission Inquiry
-      </button>
-    </PageIntro>
-  );
-}
-
-function PageIntro({ icon: Icon, title, text, bgImage, children }) {
-  const bgStyle = bgImage 
-    ? { 
-        background: `linear-gradient(90deg, rgba(16, 22, 36, 0.92), rgba(16, 22, 36, 0.65)), url("${bgImage}")`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover'
-      }
-    : {};
-
-  return (
     <>
-      <section className="page-intro" style={bgStyle}>
-        <div className="section-wrap page-intro-grid">
-          <div>
-            <span className="eyebrow">
-              <Icon size={16} />
-              Rituraj Chess Academy
-            </span>
-            <h1>{title}</h1>
-            <p>{text}</p>
-            <div className="intro-actions">{children}</div>
-          </div>
-          <img
-            src="/Photos/about-page-training.jpeg"
-            alt="Rituraj Chess Academy students"
-          />
-        </div>
-      </section>
+      <PageIntro
+        icon={Award}
+        title="About the Academy"
+        text="A disciplined chess learning environment built around fundamentals, analysis, and competitive confidence."
+        bgImage="/Photos/chess_bg_1.png"
+        image="/Photos/about-page-training.jpeg"
+      >
+        <button className="primary-button" onClick={() => goTo('contact')} type="button">
+          Start Admission Inquiry
+        </button>
+      </PageIntro>
       <section className="section-wrap mission-grid">
         <article>
           <GraduationCap size={26} />
@@ -727,6 +722,33 @@ function PageIntro({ icon: Icon, title, text, bgImage, children }) {
         ))}
       </section>
     </>
+  );
+}
+
+function PageIntro({ icon: Icon, title, text, bgImage, image, children }) {
+  const bgStyle = bgImage 
+    ? { 
+        background: `linear-gradient(90deg, rgba(16, 22, 36, 0.92), rgba(16, 22, 36, 0.65)), url("${bgImage}")`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+      }
+    : {};
+
+  return (
+    <section className="page-intro" style={bgStyle}>
+      <div className="section-wrap page-intro-grid">
+        <div>
+          <span className="eyebrow">
+            <Icon size={16} />
+            Rituraj Chess Academy
+          </span>
+          <h1>{title}</h1>
+          <p>{text}</p>
+          <div className="intro-actions">{children}</div>
+        </div>
+        {image && <img src={image} alt={title} />}
+      </div>
+    </section>
   );
 }
 
@@ -810,6 +832,9 @@ function CourseGrid({ compact = false }) {
               </li>
             ))}
           </ul>
+          <Link to="/contact" className="ghost-button" style={{ marginTop: 'auto', alignSelf: 'stretch', display: 'flex', justifyContent: 'center' }}>
+            Inquire Now
+          </Link>
         </article>
       ))}
     </div>
@@ -829,7 +854,7 @@ function TrainersPage() {
         {trainers.map((trainer) => (
           <article className="trainer-card" key={trainer.name}>
             <img src={trainer.image} alt={`${trainer.name} chess coach`} />
-            <div>
+            <div className="trainer-card-content">
               <span>{trainer.role}</span>
               <h2>{trainer.name}</h2>
               <p>{trainer.details}</p>
@@ -1075,20 +1100,20 @@ function FloatingWhatsApp() {
   );
 }
 
-function Footer({ goTo }) {
+function Footer() {
   return (
     <footer className="site-footer">
       <div className="section-wrap footer-grid">
         <div>
-          <button className="brand footer-brand" onClick={() => goTo('home')} type="button">
+          <Link className="brand footer-brand" to="/">
             <span className="brand-mark">
-              <Crown size={22} />
+              <img src="/logo.png" alt="Rituraj Chess Academy Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </span>
             <span>
               <strong>Rituraj Chess Academy</strong>
               <small>Think better. Play stronger.</small>
             </span>
-          </button>
+          </Link>
           <p>
             Premium chess coaching, tournament preparation, and structured
             training programs in Ghaziabad.
@@ -1097,16 +1122,16 @@ function Footer({ goTo }) {
         <div>
           <h2>Pages</h2>
           {navItems.map((item) => (
-            <button key={item.id} onClick={() => goTo(item.id)} type="button">
+            <Link key={item.path} to={item.path}>
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
         <div>
           <h2>Legal</h2>
-          <button onClick={() => goTo('terms')} type="button">Terms & Conditions</button>
-          <button onClick={() => goTo('privacy')} type="button">Privacy Policy</button>
-          <button onClick={() => goTo('refund')} type="button">Refund Policy</button>
+          <Link to="/terms">Terms & Conditions</Link>
+          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/refund">Refund Policy</Link>
         </div>
         <div>
           <h2>Contact</h2>
