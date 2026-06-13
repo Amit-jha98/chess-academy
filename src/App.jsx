@@ -99,7 +99,7 @@ const courses = [
     level: 'Foundation',
     duration: '8 weeks',
     icon: BookOpen,
-    image: '/Photos/about-page-training.jpeg',
+    image: '/Photos/about-page-training.webp',
     description:
       'Rules, piece movement, basic tactics, board vision, and confidence-building practice games.',
     points: ['Board basics', 'Checkmate patterns', 'Guided practice'],
@@ -109,7 +109,7 @@ const courses = [
     level: 'Growth',
     duration: '12 weeks',
     icon: Target,
-    image: '/Photos/training-moment-group.jpeg',
+    image: '/Photos/training-moment-group.webp',
     description:
       'Structured calculation, opening principles, middlegame plans, and endgame fundamentals.',
     points: ['Tactical drills', 'Opening habits', 'Game reviews'],
@@ -119,7 +119,7 @@ const courses = [
     level: 'Mastery',
     duration: '16 weeks',
     icon: Crown,
-    image: '/Photos/veidika-sapra-grand-slam.jpeg',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
     description:
       'Deep analysis, positional play, tournament discipline, and personalized improvement maps.',
     points: ['Strategy labs', 'Endgame depth', 'Performance tracking'],
@@ -129,7 +129,7 @@ const courses = [
     level: 'Competitive',
     duration: 'Ongoing',
     icon: ShieldCheck,
-    image: '/Photos/championship-prep-academy.jpeg',
+    image: '/Photos/championship-prep-academy.webp',
     description:
       'Mock rounds, time-control planning, notation review, and tournament psychology.',
     points: ['Match simulation', 'Clock handling', 'Opponent prep'],
@@ -140,7 +140,7 @@ const trainers = [
   {
     name: 'Rituraj Singh',
     role: 'Head Coach',
-    image: '/Photos/Rituraj Singh.jpeg',
+    image: '/Photos/Rituraj Singh.webp',
     details: 'Experienced chess mentor focused on tactical clarity, game analysis, and tournament readiness.',
     stats: [
       'Selected for Asian and World Amateur Chess Championships (2024)',
@@ -154,7 +154,7 @@ const trainers = [
   {
     name: 'Narayan Gaha',
     role: 'Senior Coach',
-    image: '/Photos/Narayan Gaha.jpg',
+    image: '/Photos/Narayan Gaha.webp',
     details: 'Expert in competitive match play, opening theory, and building tournament resilience.',
     stats: [
       'World FIDE RATING 1753',
@@ -178,28 +178,28 @@ const testimonials = [
     type: 'U-13 Champion',
     quote:
       'Securing 1st position in the G B Nagar District Chess Championship 2026 was a dream come true! Rituraj Chess Academy gave me the training and confidence to win.',
-    image: '/Photos/aadwan-gupta-gb-nagar.jpeg',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
   },
   {
     name: 'Kavish Saxena',
     type: 'National Rank Holder',
     quote:
       'Becoming a National Rank Holder and increasing my FIDE rating by 121+ points is my biggest achievement so far. The structured coaching here is amazing.',
-    image: '/Photos/kavish-saxena-national-amateur.png',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
   },
   {
     name: 'Vivaan Varoon',
     type: 'State Level Player',
     quote:
       'Winning at the UP State Chess Championship in both U-11 and U-13 categories shows how much my game has improved thanks to my coaches.',
-    image: '/Photos/vivaan-varoon-up-state-u11.jpeg',
+    image: '/Photos/vivaan-varoon-up-state-u11.webp',
   },
   {
     name: 'Vritti Jain',
     type: 'U-17 Champion',
     quote:
       'Securing 1st Place in the Under-17 category at the Ghaziabad District championship was possible because of the regular tournament practice and expert feedback at the academy.',
-    image: '/Photos/vritti-jain-ghaziabad-district.jpeg',
+    image: '/Photos/vritti-jain-ghaziabad-district.webp',
   },
 ];
 
@@ -207,72 +207,72 @@ const gallery = [
   {
     title: "Aadwan's Victory",
     tag: 'Tournament',
-    image: '/Photos/aadwan-gupta-gb-nagar.jpeg',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
   },
   {
     title: 'State Qualifiers',
     tag: 'Championship',
-    image: '/Photos/ghaziabad-district-winners-2024.jpeg',
+    image: '/Photos/ghaziabad-district-winners-2024.webp',
   },
   {
     title: 'National Rank',
     tag: 'National',
-    image: '/Photos/kavish-saxena-under9-national.jpeg',
+    image: '/Photos/kavish-saxena-under9-national.webp',
   },
   {
     title: "Vivaan's Double Win",
     tag: 'Tournament',
-    image: '/Photos/vivaan-ghaziabad-district.jpeg',
+    image: '/Photos/vivaan-ghaziabad-district.webp',
   },
   {
     title: "Veidika's Grand Slam",
     tag: 'Tournament',
-    image: '/Photos/veidika-sapra-grand-slam.jpeg',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
   },
   {
     title: 'UP State U-11',
     tag: 'State Level',
-    image: '/Photos/vivaan-varoon-up-state-u11.jpeg',
+    image: '/Photos/vivaan-varoon-up-state-u11.webp',
   },
   {
     title: 'UP State U-13',
     tag: 'State Level',
-    image: '/Photos/vivaan-varoon-up-state-u13.jpeg',
+    image: '/Photos/vivaan-varoon-up-state-u13.webp',
   },
   {
     title: "Vritti's U-17 Win",
     tag: 'Tournament',
-    image: '/Photos/vritti-jain-ghaziabad-district.jpeg',
+    image: '/Photos/vritti-jain-ghaziabad-district.webp',
   },
   {
     title: "Amateur Championship",
     tag: 'National',
-    image: '/Photos/kavish-saxena-national-amateur.png',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
   },
   {
     title: 'Academy Event',
     tag: 'Events',
-    image: '/Photos/testimonial-aarav.jpeg',
+    image: '/Photos/testimonial-aarav.webp',
   },
   {
     title: 'Training Focus',
     tag: 'Coaching',
-    image: '/Photos/testimonial-neha.jpeg',
+    image: '/Photos/testimonial-neha.webp',
   },
   {
     title: 'Student Match',
     tag: 'Learning',
-    image: '/Photos/about-page-training.jpeg',
+    image: '/Photos/about-page-training.webp',
   },
   {
     title: 'Championship Prep',
     tag: 'Academy',
-    image: '/Photos/championship-prep-academy.jpeg',
+    image: '/Photos/championship-prep-academy.webp',
   },
   {
     title: 'Group Session',
     tag: 'Coaching',
-    image: '/Photos/training-moment-group.jpeg',
+    image: '/Photos/training-moment-group.webp',
   },
 ];
 
@@ -280,47 +280,47 @@ const achievements = [
   {
     title: 'Aadwan Gupta Secured 1st position in G B Nagar District Chess Championship 2026',
     description: 'Rituraj Chess Academy proudly congratulates Aadwan for this remarkable victory in u-13 category.',
-    image: '/Photos/aadwan-gupta-gb-nagar.jpeg',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
   },
   {
     title: 'Ghaziabad District Chess Championship 2024 Winners & UP State Qualifiers',
     description: 'Kavish Saxena secured 3rd position, Reyansh Malik secured 4th position, Yuvaan Agarwal secured 5th position, Veidika Sapra secured 3rd position, and Arna Mall secured 4th position. Rituraj Chess Academy proudly congratulates all students for getting selected for UP State Chess Championship 2024.',
-    image: '/Photos/ghaziabad-district-winners-2024.jpeg',
+    image: '/Photos/ghaziabad-district-winners-2024.webp',
   },
   {
     title: 'Kavish Saxena secured 20th position in Under 9 National Chess Championship 2025',
     description: 'Rituraj Chess Academy proudly congratulates Kavish on winning this position and increasing 121+ fide rating.',
-    image: '/Photos/kavish-saxena-under9-national.jpeg',
+    image: '/Photos/kavish-saxena-under9-national.webp',
   },
   {
     title: 'Vivaan Secured 1st & 2nd position at Ghaziabad District Championship',
     description: 'Rituraj Chess Academy proudly congratulates Vivaan on securing 1st position in the Under-13 category & 2nd position in Under 11 category in Ghaziabad District Chess Championship.',
-    image: '/Photos/vivaan-ghaziabad-district.jpeg',
+    image: '/Photos/vivaan-ghaziabad-district.webp',
   },
   {
     title: 'Veidika Sapra secured 1st runner up position in 1st Grand Slam Tournament',
     description: 'Rituraj Chess Academy proudly congratulates Veidika Sapra on securing this prestigious win.',
-    image: '/Photos/veidika-sapra-grand-slam.jpeg',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
   },
   {
     title: 'Vivaan Varoon Secured 4th Place at UP State Chess Championship',
     description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 4th Position in the Under-11 category at the Uttar Pradesh State Chess Championship.',
-    image: '/Photos/vivaan-varoon-up-state-u11.jpeg',
+    image: '/Photos/vivaan-varoon-up-state-u11.webp',
   },
   {
     title: 'Vivaan Varoon Secured 3rd Place at UP State Chess Championship',
     description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 3rd Position in the Under-13 category at the Uttar Pradesh State Chess Championship.',
-    image: '/Photos/vivaan-varoon-up-state-u13.jpeg',
+    image: '/Photos/vivaan-varoon-up-state-u13.webp',
   },
   {
     title: 'Vritti Jain Secured 1st Place at Ghaziabad District championship',
     description: 'Rituraj Chess Academy proudly congratulates Vritti Jain on securing 1st Position in the Under-17 category at the Ghaziabad District chess championship.',
-    image: '/Photos/vritti-jain-ghaziabad-district.jpeg',
+    image: '/Photos/vritti-jain-ghaziabad-district.webp',
   },
   {
     title: 'Kavish Saxena won 1st runner up position in 13th National Amateur Chess Championship 2026',
     description: 'Rituraj Chess Academy proudly congratulates Kavish on his big achievement for becoming a National Rank Holder in the B-1700 Open category.',
-    image: '/Photos/kavish-saxena-national-amateur.png',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
   },
 ];
 
@@ -593,7 +593,7 @@ function AnnouncementMarquee() {
               <X size={20} />
             </button>
             <div className="popup-slideshow" style={{ gridTemplateRows: '1fr', maxHeight: '50vh' }}>
-              <img 
+              <img loading="lazy" 
                 src={selectedAchievement.image} 
                 alt={selectedAchievement.title} 
                 className="popup-slide active" 
@@ -610,7 +610,7 @@ function AnnouncementMarquee() {
                 rel="noreferrer"
                 style={{ marginTop: '20px' }}
               >
-                <img src="/Photos/whatsapp_logo.png" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '8px', objectFit: 'contain' }} />
+                <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '8px', objectFit: 'contain' }} />
                 Congratulate on WhatsApp
               </a>
             </div>
@@ -666,8 +666,8 @@ function AboutPage({ goTo }) {
         icon={Award}
         title="About the Academy"
         text="A disciplined chess learning environment built around fundamentals, analysis, and competitive confidence."
-        bgImage="/Photos/chess_bg_1.png"
-        image="/Photos/about-page-training.jpeg"
+        bgImage="/Photos/chess_bg_1.webp"
+        image="/Photos/about-page-training.webp"
       >
         <button className="primary-button" onClick={() => goTo('contact')} type="button">
           Start Admission Inquiry
@@ -699,7 +699,7 @@ function AboutPage({ goTo }) {
         <div className="achievement-grid">
           {achievements.map((item, idx) => (
             <article className="achievement-card" key={idx}>
-              <img src={item.image} alt={item.title} />
+              <img loading="lazy" src={item.image} alt={item.title} />
               <div className="achievement-content">
                 <h3><Trophy size={20} className="trophy-icon" /> {item.title}</h3>
                 <p>{item.description}</p>
@@ -746,7 +746,7 @@ function PageIntro({ icon: Icon, title, text, bgImage, image, children }) {
           <p>{text}</p>
           <div className="intro-actions">{children}</div>
         </div>
-        {image && <img src={image} alt={title} />}
+        {image && <img loading="lazy" src={image} alt={title} />}
       </div>
     </section>
   );
@@ -809,7 +809,7 @@ function CourseGrid({ compact = false }) {
         <article className="course-card" key={title}>
           {image && (
             <div className="course-image-wrapper">
-              <img src={image} alt={title} />
+              <img loading="lazy" src={image} alt={title} />
             </div>
           )}
           <div className="card-top">
@@ -848,12 +848,12 @@ function TrainersPage() {
         icon={Users}
         title="Trainer Profiles"
         text="Profiles include qualifications, experience, and achievement focus areas so students can find the right training environment."
-        bgImage="/Photos/chess_bg_3.png"
+        bgImage="/Photos/chess_bg_3.webp"
       />
       <section className="section-wrap trainer-grid">
         {trainers.map((trainer) => (
           <article className="trainer-card" key={trainer.name}>
-            <img src={trainer.image} alt={`${trainer.name} chess coach`} />
+            <img loading="lazy" src={trainer.image} alt={`${trainer.name} chess coach`} />
             <div className="trainer-card-content">
               <span>{trainer.role}</span>
               <h2>{trainer.name}</h2>
@@ -878,12 +878,12 @@ function GalleryPage() {
         icon={Image}
         title="Gallery"
         text="A visual gallery prepared for academy photographs, event images, classroom snapshots, and tournament memories."
-        bgImage="/Photos/chess_bg_4.png"
+        bgImage="/Photos/chess_bg_4.webp"
       />
       <section className="section-wrap gallery-grid">
         {gallery.map((item) => (
           <article className="gallery-card" key={item.title}>
-            <img src={item.image} alt={item.title} />
+            <img loading="lazy" src={item.image} alt={item.title} />
             <div>
               <span>{item.tag}</span>
               <h2>{item.title}</h2>
@@ -923,7 +923,7 @@ function TestimonialsPage({ goTo }) {
         icon={Star}
         title="Student Stories"
         text="Read experiences from our students and parents. Real feedback on training methodology, improvement timelines, and tournament success."
-        bgImage="/Photos/chess_abstract_bg.png"
+        bgImage="/Photos/chess_abstract_bg.webp"
       />
       <section className="section-wrap testimonial-grid">
         {testimonials.map((item) => (
@@ -940,7 +940,7 @@ function TestimonialCard({ item }) {
     <article className="testimonial-card">
       {item.image && (
         <div className="testimonial-image-wrapper">
-          <img src={item.image} alt={`${item.name}'s experience`} />
+          <img loading="lazy" src={item.image} alt={`${item.name}'s experience`} />
         </div>
       )}
       <div className="stars" aria-label="Five star rating">
@@ -966,7 +966,7 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
         icon={Mail}
         title="Start a chess training inquiry."
         text="Share student details, preferred program, and your message. The form is configured to send inquiries by SMTP when server credentials are added."
-        bgImage="/Photos/chess_bg_1.png"
+        bgImage="/Photos/chess_bg_1.webp"
       />
       <section className="section-wrap contact-grid">
         <div className="contact-info">
@@ -1095,7 +1095,7 @@ function FloatingWhatsApp() {
       rel="noreferrer"
       aria-label="Contact on WhatsApp"
     >
-      <img src="/Photos/whatsapp_logo.png" alt="WhatsApp" />
+      <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" />
     </a>
   );
 }
@@ -1157,8 +1157,8 @@ function WelcomePopup() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    'Photos/ghaziabad-district-winners-2024.jpeg', 
-    'Photos/about-page-training.jpeg', 
+    '/Photos/ghaziabad-district-winners-2024.webp', 
+    '/Photos/about-page-training.webp', 
   ];
 
   useEffect(() => {
@@ -1184,7 +1184,7 @@ function WelcomePopup() {
         </button>
         <div className="popup-slideshow">
           {images.map((img, index) => (
-            <img 
+            <img loading="lazy" 
               key={index} 
               src={img} 
               alt={`Slide ${index + 1}`} 
@@ -1212,7 +1212,7 @@ function WelcomePopup() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/Photos/whatsapp_logo.png" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '8px', objectFit: 'contain' }} />
+            <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '8px', objectFit: 'contain' }} />
             Chat with us on WhatsApp
           </a>
         </div>

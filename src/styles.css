@@ -752,7 +752,7 @@ img {
   color: #fff;
   background:
     linear-gradient(135deg, rgba(16, 22, 36, 0.94), rgba(25, 79, 69, 0.92)),
-    url("/Photos/chess_bg_testimony.png");
+    url("/Photos/chess_bg_testimony.webp");
   background-position: center;
   background-size: cover;
 }
@@ -864,7 +864,7 @@ img {
   color: #fff;
   background:
     linear-gradient(90deg, rgba(16, 22, 36, 0.92), rgba(16, 22, 36, 0.65)),
-    url("/Photos/chess_abstract_bg.png");
+    url("/Photos/chess_abstract_bg.webp");
   background-position: center;
   background-size: cover;
 }
