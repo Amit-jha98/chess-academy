@@ -398,11 +398,20 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formState),
       });
-      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Unable to submit inquiry.');
+        let errorMsg = 'Unable to submit inquiry.';
+        try {
+          const data = await response.json();
+          errorMsg = data.error || errorMsg;
+        } catch {
+          // If the server returns a 502/504 proxy error, it won't be valid JSON.
+          errorMsg = 'Backend server is not running or unreachable.';
+        }
+        throw new Error(errorMsg);
       }
+
+      const data = await response.json();
 
       setStatus({ type: 'success', message: data.message });
       setFormState({
