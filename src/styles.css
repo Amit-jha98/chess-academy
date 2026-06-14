@@ -957,10 +957,10 @@ img {
   gap: 32px;
   align-items: stretch;
   padding: 24px;
-  background: #ffffff;
-  border: 1px solid rgba(16, 22, 36, 0.06);
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(16, 22, 36, 0.04);
+  box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1021,7 +1021,7 @@ img {
 .trainer-card li {
   position: relative;
   padding-left: 24px;
-  color: #344054;
+  color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -1319,6 +1319,7 @@ img {
     width: 100%;
     max-width: 100%;
     height: auto;
+    min-height: auto;
   }
 
   .hero-content {
@@ -1492,6 +1493,33 @@ img {
   .floating-whatsapp {
     right: 14px;
     bottom: 14px;
+  }
+
+  /* Mobile Popup Optimization */
+  .popup-overlay {
+    padding: 12px;
+  }
+  
+  .popup-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .popup-slide {
+    max-height: 45vh;
+  }
+  
+  .popup-actions {
+    padding: 20px 16px;
+  }
+  
+  .popup-actions h3 {
+    font-size: 1.2rem;
+  }
+  
+  .popup-actions p {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
   }
 }
 

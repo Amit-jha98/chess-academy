@@ -375,6 +375,9 @@ function App() {
     if (ogDescription) {
       ogDescription.setAttribute('content', meta.description);
     }
+    
+    // Scroll to top on page change
+    window.scrollTo(0, 0);
   }, [activePage]);
 
   const goTo = (id) => {
@@ -593,7 +596,7 @@ function AnnouncementMarquee() {
               <X size={20} />
             </button>
             <div className="popup-slideshow" style={{ gridTemplateRows: '1fr', maxHeight: '50vh' }}>
-              <img loading="lazy" 
+              <img 
                 src={selectedAchievement.image} 
                 alt={selectedAchievement.title} 
                 className="popup-slide active" 
@@ -1184,7 +1187,7 @@ function WelcomePopup() {
         </button>
         <div className="popup-slideshow">
           {images.map((img, index) => (
-            <img loading="lazy" 
+            <img 
               key={index} 
               src={img} 
               alt={`Slide ${index + 1}`} 
