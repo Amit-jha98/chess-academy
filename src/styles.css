@@ -1110,7 +1110,6 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  padding: 64px 0 88px;
 }
 
 .gallery-card {
