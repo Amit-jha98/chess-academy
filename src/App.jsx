@@ -33,6 +33,7 @@ const navItems = [
   { label: 'Trainers', path: '/trainers' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Testimonials', path: '/testimonials' },
+  { label: 'Feedback', path: '/feedback' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -83,6 +84,10 @@ const pageMeta = {
   refund: {
     title: 'Refund Policy | Rituraj Chess Academy',
     description: 'Refund and cancellation policy for Rituraj Chess Academy programs.',
+  },
+  feedback: {
+    title: 'Submit Feedback | Rituraj Chess Academy',
+    description: 'Share your feedback, reviews, and suggestions about our chess coaching programs and facilities.',
   },
 };
 
@@ -174,15 +179,9 @@ const trainers = [
 
 const testimonials = [
   {
-    name: 'Aadwan Gupta',
-    type: 'U-13 Champion',
-    quote:
-      'Securing 1st position in the G B Nagar District Chess Championship 2026 was a dream come true! Rituraj Chess Academy gave me the training and confidence to win.',
-    image: '/Photos/aadwan-gupta-gb-nagar.webp',
-  },
-  {
     name: 'Kavish Saxena',
     type: 'National Rank Holder',
+    rank: 'National',
     quote:
       'Becoming a National Rank Holder and increasing my FIDE rating by 121+ points is my biggest achievement so far. The structured coaching here is amazing.',
     image: '/Photos/kavish-saxena-national-amateur.webp',
@@ -190,13 +189,23 @@ const testimonials = [
   {
     name: 'Vivaan Varoon',
     type: 'State Level Player',
+    rank: 'State',
     quote:
       'Winning at the UP State Chess Championship in both U-11 and U-13 categories shows how much my game has improved thanks to my coaches.',
     image: '/Photos/vivaan-varoon-up-state-u11.webp',
   },
   {
+    name: 'Aadwan Gupta',
+    type: 'U-13 Champion',
+    rank: 'District',
+    quote:
+      'Securing 1st position in the G B Nagar District Chess Championship 2026 was a dream come true! Rituraj Chess Academy gave me the training and confidence to win.',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
+  },
+  {
     name: 'Vritti Jain',
     type: 'U-17 Champion',
+    rank: 'District',
     quote:
       'Securing 1st Place in the Under-17 category at the Ghaziabad District championship was possible because of the regular tournament practice and expert feedback at the academy.',
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
@@ -205,122 +214,147 @@ const testimonials = [
 
 const gallery = [
   {
-    title: "Aadwan's Victory",
-    tag: 'Tournament',
-    image: '/Photos/aadwan-gupta-gb-nagar.webp',
-  },
-  {
-    title: 'State Qualifiers',
-    tag: 'Championship',
-    image: '/Photos/ghaziabad-district-winners-2024.webp',
-  },
-  {
     title: 'National Rank',
     tag: 'National',
+    rank: 'National',
     image: '/Photos/kavish-saxena-under9-national.webp',
   },
   {
-    title: "Vivaan's Double Win",
-    tag: 'Tournament',
-    image: '/Photos/vivaan-ghaziabad-district.webp',
-  },
-  {
-    title: "Veidika's Grand Slam",
-    tag: 'Tournament',
-    image: '/Photos/veidika-sapra-grand-slam.webp',
+    title: 'Amateur Championship',
+    tag: 'National',
+    rank: 'National',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
   },
   {
     title: 'UP State U-11',
-    tag: 'State Level',
+    tag: 'State',
+    rank: 'State',
     image: '/Photos/vivaan-varoon-up-state-u11.webp',
   },
   {
     title: 'UP State U-13',
-    tag: 'State Level',
+    tag: 'State',
+    rank: 'State',
     image: '/Photos/vivaan-varoon-up-state-u13.webp',
   },
   {
+    title: "Aadwan's Victory",
+    tag: 'District',
+    rank: 'District',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
+  },
+  {
+    title: 'State Qualifiers',
+    tag: 'District',
+    rank: 'District',
+    image: '/Photos/ghaziabad-district-winners-2024.webp',
+  },
+  {
+    title: "Vivaan's Double Win",
+    tag: 'District',
+    rank: 'District',
+    image: '/Photos/vivaan-ghaziabad-district.webp',
+  },
+  {
     title: "Vritti's U-17 Win",
-    tag: 'Tournament',
+    tag: 'District',
+    rank: 'District',
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
   },
   {
-    title: "Amateur Championship",
-    tag: 'National',
-    image: '/Photos/kavish-saxena-national-amateur.webp',
+    title: "Veidika's Grand Slam",
+    tag: 'Tournament',
+    rank: 'Other',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
   },
   {
     title: 'Academy Event',
-    tag: 'Events',
+    tag: 'Academy',
+    rank: 'Other',
     image: '/Photos/testimonial-aarav.webp',
   },
   {
     title: 'Training Focus',
     tag: 'Coaching',
+    rank: 'Other',
     image: '/Photos/testimonial-neha.webp',
   },
   {
     title: 'Student Match',
-    tag: 'Learning',
+    tag: 'Academy',
+    rank: 'Other',
     image: '/Photos/about-page-training.webp',
   },
   {
     title: 'Championship Prep',
     tag: 'Academy',
+    rank: 'Other',
     image: '/Photos/championship-prep-academy.webp',
   },
   {
     title: 'Group Session',
     tag: 'Coaching',
+    rank: 'Other',
     image: '/Photos/training-moment-group.webp',
   },
 ];
 
+const rankOrder = { National: 0, State: 1, District: 2, Other: 3 };
+
 const achievements = [
   {
-    title: 'Aadwan Gupta Secured 1st position in G B Nagar District Chess Championship 2026',
-    description: 'Rituraj Chess Academy proudly congratulates Aadwan for this remarkable victory in u-13 category.',
-    image: '/Photos/aadwan-gupta-gb-nagar.webp',
-  },
-  {
-    title: 'Ghaziabad District Chess Championship 2024 Winners & UP State Qualifiers',
-    description: 'Kavish Saxena secured 3rd position, Reyansh Malik secured 4th position, Yuvaan Agarwal secured 5th position, Veidika Sapra secured 3rd position, and Arna Mall secured 4th position. Rituraj Chess Academy proudly congratulates all students for getting selected for UP State Chess Championship 2024.',
-    image: '/Photos/ghaziabad-district-winners-2024.webp',
+    title: 'Kavish Saxena won 1st runner up position in 13th National Amateur Chess Championship 2026',
+    description: 'Rituraj Chess Academy proudly congratulates Kavish on his big achievement for becoming a National Rank Holder in the B-1700 Open category.',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
+    rank: 'National',
   },
   {
     title: 'Kavish Saxena secured 20th position in Under 9 National Chess Championship 2025',
     description: 'Rituraj Chess Academy proudly congratulates Kavish on winning this position and increasing 121+ fide rating.',
     image: '/Photos/kavish-saxena-under9-national.webp',
-  },
-  {
-    title: 'Vivaan Secured 1st & 2nd position at Ghaziabad District Championship',
-    description: 'Rituraj Chess Academy proudly congratulates Vivaan on securing 1st position in the Under-13 category & 2nd position in Under 11 category in Ghaziabad District Chess Championship.',
-    image: '/Photos/vivaan-ghaziabad-district.webp',
-  },
-  {
-    title: 'Veidika Sapra secured 1st runner up position in 1st Grand Slam Tournament',
-    description: 'Rituraj Chess Academy proudly congratulates Veidika Sapra on securing this prestigious win.',
-    image: '/Photos/veidika-sapra-grand-slam.webp',
+    rank: 'National',
   },
   {
     title: 'Vivaan Varoon Secured 4th Place at UP State Chess Championship',
     description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 4th Position in the Under-11 category at the Uttar Pradesh State Chess Championship.',
     image: '/Photos/vivaan-varoon-up-state-u11.webp',
+    rank: 'State',
   },
   {
     title: 'Vivaan Varoon Secured 3rd Place at UP State Chess Championship',
     description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 3rd Position in the Under-13 category at the Uttar Pradesh State Chess Championship.',
     image: '/Photos/vivaan-varoon-up-state-u13.webp',
+    rank: 'State',
+  },
+  {
+    title: 'Aadwan Gupta Secured 1st position in G B Nagar District Chess Championship 2026',
+    description: 'Rituraj Chess Academy proudly congratulates Aadwan for this remarkable victory in u-13 category.',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
+    rank: 'District',
+  },
+  {
+    title: 'Ghaziabad District Chess Championship 2024 Winners & UP State Qualifiers',
+    description: 'Kavish Saxena secured 3rd position, Reyansh Malik secured 4th position, Yuvaan Agarwal secured 5th position, Veidika Sapra secured 3rd position, and Arna Mall secured 4th position. Rituraj Chess Academy proudly congratulates all students for getting selected for UP State Chess Championship 2024.',
+    image: '/Photos/ghaziabad-district-winners-2024.webp',
+    rank: 'District',
+  },
+  {
+    title: 'Vivaan Secured 1st & 2nd position at Ghaziabad District Championship',
+    description: 'Rituraj Chess Academy proudly congratulates Vivaan on securing 1st position in the Under-13 category & 2nd position in Under 11 category in Ghaziabad District Chess Championship.',
+    image: '/Photos/vivaan-ghaziabad-district.webp',
+    rank: 'District',
   },
   {
     title: 'Vritti Jain Secured 1st Place at Ghaziabad District championship',
     description: 'Rituraj Chess Academy proudly congratulates Vritti Jain on securing 1st Position in the Under-17 category at the Ghaziabad District chess championship.',
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
+    rank: 'District',
   },
   {
-    title: 'Kavish Saxena won 1st runner up position in 13th National Amateur Chess Championship 2026',
-    description: 'Rituraj Chess Academy proudly congratulates Kavish on his big achievement for becoming a National Rank Holder in the B-1700 Open category.',
-    image: '/Photos/kavish-saxena-national-amateur.webp',
+    title: 'Veidika Sapra secured 1st runner up position in 1st Grand Slam Tournament',
+    description: 'Rituraj Chess Academy proudly congratulates Veidika Sapra on securing this prestigious win.',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
+    rank: 'Other',
   },
 ];
 
@@ -461,6 +495,7 @@ function App() {
               submitting={submitting}
             />
           } />
+          <Route path="/feedback" element={<FeedbackPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/refund" element={<RefundPage />} />
@@ -664,6 +699,7 @@ function HomePage({ goTo }) {
           </button>
         </div>
       </section>
+      <FeaturedChampions goTo={goTo} />
       <CoursesPreview goTo={goTo} />
       <TestimonialsPreview goTo={goTo} />
       <CtaBand goTo={goTo} />
@@ -711,7 +747,10 @@ function AboutPage({ goTo }) {
         <div className="achievement-grid">
           {achievements.map((item, idx) => (
             <article className="achievement-card" key={idx}>
-              <img loading="lazy" src={item.image} alt={item.title} />
+              <div className="achievement-image-wrap">
+                <img loading="lazy" src={item.image} alt={item.title} />
+                <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+              </div>
               <div className="achievement-content">
                 <h3><Trophy size={20} className="trophy-icon" /> {item.title}</h3>
                 <p>{item.description}</p>
@@ -759,6 +798,37 @@ function PageIntro({ icon: Icon, title, text, bgImage, image, children }) {
           <div className="intro-actions">{children}</div>
         </div>
         {image && <img loading="lazy" src={image} alt={title} />}
+      </div>
+    </section>
+  );
+}
+
+function FeaturedChampions({ goTo }) {
+  const featured = achievements.slice(0, 3);
+  return (
+    <section className="featured-champions">
+      <div className="section-wrap">
+        <div className="section-heading">
+          <span className="section-kicker">Our Champions</span>
+          <h2>Recent victories that make us proud.</h2>
+          <button className="text-button" onClick={() => goTo('about')} type="button">
+            View all achievements <ChevronRight size={16} />
+          </button>
+        </div>
+        <div className="champions-grid">
+          {featured.map((item, idx) => (
+            <article className={`champion-card ${idx === 0 ? 'champion-featured' : ''}`} key={idx}>
+              <div className="champion-image-wrap">
+                <img loading="lazy" src={item.image} alt={item.title} />
+                <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+              </div>
+              <div className="champion-content">
+                <h3><Trophy size={18} /> {item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -896,6 +966,9 @@ function GalleryPage() {
         {gallery.map((item) => (
           <article className="gallery-card" key={item.title}>
             <img loading="lazy" src={item.image} alt={item.title} />
+            {item.rank && (
+              <span className={`rank-badge gallery-rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+            )}
             <div>
               <span>{item.tag}</span>
               <h2>{item.title}</h2>
@@ -953,6 +1026,9 @@ function TestimonialCard({ item }) {
       {item.image && (
         <div className="testimonial-image-wrapper">
           <img loading="lazy" src={item.image} alt={`${item.name}'s experience`} />
+          {item.rank && (
+            <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+          )}
         </div>
       )}
       <div className="stars" aria-label="Five star rating">
@@ -964,6 +1040,191 @@ function TestimonialCard({ item }) {
       <strong>{item.name}</strong>
       <span>{item.type}</span>
     </article>
+  );
+}
+function FeedbackPage() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    rating: '5',
+    category: 'Coaching Quality',
+    message: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
+
+  const updateField = (field, value) => {
+    setFormState((current) => ({ ...current, [field]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        let errorMsg = 'Unable to submit feedback.';
+        try {
+          const data = await response.json();
+          errorMsg = data.error || errorMsg;
+        } catch {
+          errorMsg = 'Backend server is not running or unreachable.';
+        }
+        throw new Error(errorMsg);
+      }
+
+      const data = await response.json();
+
+      setStatus({ type: 'success', message: data.message });
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        rating: '5',
+        category: 'Coaching Quality',
+        message: '',
+      });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error.message || 'The form is temporarily unavailable. Please try again later.',
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <>
+      <PageIntro
+        icon={MessageCircle}
+        title="We Value Your Feedback."
+        text="Share your experience, reviews, or suggestions to help us improve our chess academy and coaching services."
+        bgImage="/Photos/chess_bg_1.webp"
+      />
+      <section className="section-wrap contact-grid">
+        <div className="contact-info">
+          <article>
+            <MessageCircle size={22} />
+            <div>
+              <h2>Share Your Experience</h2>
+              <p>Your feedback is crucial in helping us provide the best possible chess training environment.</p>
+            </div>
+          </article>
+          <article>
+            <Star size={22} />
+            <div>
+              <h2>Testimonials</h2>
+              <p>Great feedback may be featured on our testimonials page.</p>
+            </div>
+          </article>
+          <article>
+            <Trophy size={22} />
+            <div>
+              <h2>Continuous Improvement</h2>
+              <p>We use your suggestions to refine our curriculum.</p>
+            </div>
+          </article>
+        </div>
+
+        <form onSubmit={handleSubmit} className="inquiry-form">
+          <label>
+            Full Name *
+            <input
+              type="text"
+              required
+              value={formState.name}
+              onChange={(e) => updateField('name', e.target.value)}
+              placeholder="Your name"
+              disabled={submitting}
+            />
+          </label>
+
+          <label>
+            Email Address *
+            <input
+              type="email"
+              required
+              value={formState.email}
+              onChange={(e) => updateField('email', e.target.value)}
+              placeholder="you@example.com"
+              disabled={submitting}
+            />
+          </label>
+
+          <label>
+            Phone Number (Optional)
+            <input
+              type="tel"
+              value={formState.phone}
+              onChange={(e) => updateField('phone', e.target.value)}
+              placeholder="+91"
+              disabled={submitting}
+            />
+          </label>
+
+          <label>
+            Feedback Category *
+            <select
+              value={formState.category}
+              onChange={(e) => updateField('category', e.target.value)}
+              disabled={submitting}
+            >
+              <option value="Coaching Quality">Coaching Quality</option>
+              <option value="Website Experience">Website Experience</option>
+              <option value="Facilities">Facilities & Environment</option>
+              <option value="General Suggestion">General Suggestion</option>
+              <option value="Testimonial">Testimonial</option>
+            </select>
+          </label>
+
+          <label>
+            Rating (1-5) *
+            <select
+              value={formState.rating}
+              onChange={(e) => updateField('rating', e.target.value)}
+              disabled={submitting}
+            >
+              <option value="5">⭐⭐⭐⭐⭐ (5) Excellent</option>
+              <option value="4">⭐⭐⭐⭐ (4) Good</option>
+              <option value="3">⭐⭐⭐ (3) Average</option>
+              <option value="2">⭐⭐ (2) Poor</option>
+              <option value="1">⭐ (1) Terrible</option>
+            </select>
+          </label>
+
+          <label>
+            Your Feedback *
+            <textarea
+              required
+              rows={4}
+              value={formState.message}
+              onChange={(e) => updateField('message', e.target.value)}
+              placeholder="Tell us about your experience..."
+              disabled={submitting}
+            />
+          </label>
+
+          <button type="submit" disabled={submitting} className="submit-btn">
+            {submitting ? 'Submitting Feedback...' : 'Submit Feedback'}
+          </button>
+
+          {status.message && (
+            <div className={`status-message ${status.type}`}>
+              {status.message}
+            </div>
+          )}
+        </form>
+      </section>
+    </>
   );
 }
 
@@ -1141,6 +1402,7 @@ function Footer() {
         </div>
         <div>
           <h2>Legal</h2>
+          <Link to="/feedback">Submit Feedback</Link>
           <Link to="/terms">Terms & Conditions</Link>
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/refund">Refund Policy</Link>
@@ -1169,8 +1431,8 @@ function WelcomePopup() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    '/Photos/ghaziabad-district-winners-2024.webp', 
-    '/Photos/about-page-training.webp', 
+    '/Photos/pop_up_image.webp', 
+    '/Photos/pop_up_image2.webp', 
   ];
 
   useEffect(() => {
