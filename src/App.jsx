@@ -613,6 +613,33 @@ function Hero({ goTo }) {
   );
 }
 
+function HierarchicalSection({ data, renderItem, gridClassName }) {
+  const groups = { National: [], State: [], District: [], Other: [] };
+  data.forEach(item => {
+    if (groups[item.rank]) {
+      groups[item.rank].push(item);
+    } else {
+      groups.Other.push(item);
+    }
+  });
+  
+  return (
+    <div className="hierarchical-container">
+      {Object.entries(groups).map(([rank, items]) => {
+        if (items.length === 0) return null;
+        return (
+          <div key={rank} className="hierarchy-group">
+            <h3 className="hierarchy-title">{rank} {rank !== 'Other' ? 'Level' : 'Events'}</h3>
+            <div className={gridClassName}>
+              {items.map((item, idx) => renderItem(item, idx))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function AnnouncementMarquee() {
   const [selectedAchievement, setSelectedAchievement] = useState(null);
 
@@ -744,8 +771,10 @@ function AboutPage({ goTo }) {
           <span className="section-kicker">Achievements</span>
           <h2>Celebrating Our Champions.</h2>
         </div>
-        <div className="achievement-grid">
-          {achievements.map((item, idx) => (
+        <HierarchicalSection 
+          data={achievements}
+          gridClassName="achievement-grid"
+          renderItem={(item, idx) => (
             <article className="achievement-card" key={idx}>
               <div className="achievement-image-wrap">
                 <img loading="lazy" src={item.image} alt={item.title} />
@@ -756,8 +785,8 @@ function AboutPage({ goTo }) {
                 <p>{item.description}</p>
               </div>
             </article>
-          ))}
-        </div>
+          )}
+        />
       </section>
       <section className="section-wrap why-grid">
         {[
@@ -962,19 +991,23 @@ function GalleryPage() {
         text="A visual gallery prepared for academy photographs, event images, classroom snapshots, and tournament memories."
         bgImage="/Photos/chess_bg_4.webp"
       />
-      <section className="section-wrap gallery-grid">
-        {gallery.map((item) => (
-          <article className="gallery-card" key={item.title}>
-            <img loading="lazy" src={item.image} alt={item.title} />
-            {item.rank && (
-              <span className={`rank-badge gallery-rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
-            )}
-            <div>
-              <span>{item.tag}</span>
-              <h2>{item.title}</h2>
-            </div>
-          </article>
-        ))}
+      <section className="section-wrap">
+        <HierarchicalSection 
+          data={gallery}
+          gridClassName="gallery-grid"
+          renderItem={(item) => (
+            <article className="gallery-card" key={item.title}>
+              <img loading="lazy" src={item.image} alt={item.title} />
+              {item.rank && (
+                <span className={`rank-badge gallery-rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+              )}
+              <div>
+                <span>{item.tag}</span>
+                <h2>{item.title}</h2>
+              </div>
+            </article>
+          )}
+        />
       </section>
     </>
   );
@@ -1010,10 +1043,14 @@ function TestimonialsPage({ goTo }) {
         text="Read experiences from our students and parents. Real feedback on training methodology, improvement timelines, and tournament success."
         bgImage="/Photos/chess_abstract_bg.webp"
       />
-      <section className="section-wrap testimonial-grid">
-        {testimonials.map((item) => (
-          <TestimonialCard key={item.name} item={item} />
-        ))}
+      <section className="section-wrap">
+        <HierarchicalSection
+          data={testimonials}
+          gridClassName="testimonial-grid"
+          renderItem={(item) => (
+            <TestimonialCard key={item.name} item={item} />
+          )}
+        />
       </section>
       <CtaBand goTo={goTo} />
     </>

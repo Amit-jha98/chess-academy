@@ -1081,6 +1081,31 @@ img {
   top: -2px;
 }
 
+/* Hierarchy Groups */
+.hierarchical-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 64px 0 88px;
+}
+
+.hierarchy-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hierarchy-title {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 8px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
