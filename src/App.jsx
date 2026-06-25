@@ -28,12 +28,11 @@ const ChessHeroScene = lazy(() => import('./ChessHeroScene.jsx'));
 
 const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
+  { label: 'About Us', path: '/about' },
   { label: 'Courses', path: '/courses' },
+  { label: 'Achievements', path: '/achievements' },
   { label: 'Trainers', path: '/trainers' },
   { label: 'Gallery', path: '/gallery' },
-  { label: 'Testimonials', path: '/testimonials' },
-  { label: 'Feedback', path: '/feedback' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -52,6 +51,11 @@ const pageMeta = {
     title: 'Chess Courses in Ghaziabad | Rituraj Chess Academy',
     description:
       'Explore beginner, intermediate, advanced, and tournament preparation chess programs at Rituraj Chess Academy.',
+  },
+  achievements: {
+    title: 'Achievements | Rituraj Chess Academy Ghaziabad',
+    description:
+      'Celebrating champions — National, State, and District level chess achievements by our students.',
   },
   trainers: {
     title: 'Chess Trainers | Rituraj Chess Academy Ghaziabad',
@@ -92,10 +96,10 @@ const pageMeta = {
 };
 
 const highlights = [
-  { icon: Trophy, value: '120+', label: 'Tournament medals' },
-  { icon: Users, value: '900+', label: 'Students coached' },
-  { icon: Clock, value: '12+', label: 'Years of training' },
-  { icon: Star, value: '4.9/5', label: 'Parent rating' },
+  { icon: Users, value: '1000+', label: 'Students Trained' },
+  { icon: Trophy, value: '200+', label: 'Tournament Winners' },
+  { icon: Star, value: '200+', label: 'Avg Rating Improvement' },
+  { icon: Clock, value: '4+', label: 'Years of Excellence' },
 ];
 
 const courses = [
@@ -213,90 +217,20 @@ const testimonials = [
 ];
 
 const gallery = [
-  {
-    title: 'National Rank',
-    tag: 'National',
-    rank: 'National',
-    image: '/Photos/kavish-saxena-under9-national.webp',
-  },
-  {
-    title: 'Amateur Championship',
-    tag: 'National',
-    rank: 'National',
-    image: '/Photos/kavish-saxena-national-amateur.webp',
-  },
-  {
-    title: 'UP State U-11',
-    tag: 'State',
-    rank: 'State',
-    image: '/Photos/vivaan-varoon-up-state-u11.webp',
-  },
-  {
-    title: 'UP State U-13',
-    tag: 'State',
-    rank: 'State',
-    image: '/Photos/vivaan-varoon-up-state-u13.webp',
-  },
-  {
-    title: "Aadwan's Victory",
-    tag: 'District',
-    rank: 'District',
-    image: '/Photos/aadwan-gupta-gb-nagar.webp',
-  },
-  {
-    title: 'State Qualifiers',
-    tag: 'District',
-    rank: 'District',
-    image: '/Photos/ghaziabad-district-winners-2024.webp',
-  },
-  {
-    title: "Vivaan's Double Win",
-    tag: 'District',
-    rank: 'District',
-    image: '/Photos/vivaan-ghaziabad-district.webp',
-  },
-  {
-    title: "Vritti's U-17 Win",
-    tag: 'District',
-    rank: 'District',
-    image: '/Photos/vritti-jain-ghaziabad-district.webp',
-  },
-  {
-    title: "Veidika's Grand Slam",
-    tag: 'Tournament',
-    rank: 'Other',
-    image: '/Photos/veidika-sapra-grand-slam.webp',
-  },
-  {
-    title: 'Academy Event',
-    tag: 'Academy',
-    rank: 'Other',
-    image: '/Photos/testimonial-aarav.webp',
-  },
-  {
-    title: 'Training Focus',
-    tag: 'Coaching',
-    rank: 'Other',
-    image: '/Photos/testimonial-neha.webp',
-  },
-  {
-    title: 'Student Match',
-    tag: 'Academy',
-    rank: 'Other',
-    image: '/Photos/about-page-training.webp',
-  },
-  {
-    title: 'Championship Prep',
-    tag: 'Academy',
-    rank: 'Other',
-    image: '/Photos/championship-prep-academy.webp',
-  },
-  {
-    title: 'Group Session',
-    tag: 'Coaching',
-    rank: 'Other',
-    image: '/Photos/training-moment-group.webp',
-  },
+  { title: 'National Rank', tag: 'National', rank: 'National', image: '/Photos/kavish-saxena-under9-national.webp' },
+  { title: 'Amateur Championship', tag: 'National', rank: 'National', image: '/Photos/kavish-saxena-national-amateur.webp' },
+  { title: 'UP State U-11', tag: 'State', rank: 'State', image: '/Photos/vivaan-varoon-up-state-u11.webp' },
+  { title: 'UP State U-13', tag: 'State', rank: 'State', image: '/Photos/vivaan-varoon-up-state-u13.webp' },
+  { title: "Aadwan's Victory", tag: 'District', rank: 'District', image: '/Photos/aadwan-gupta-gb-nagar.webp' },
+  { title: 'State Qualifiers', tag: 'District', rank: 'District', image: '/Photos/ghaziabad-district-winners-2024.webp' },
+  { title: "Vivaan's Double Win", tag: 'District', rank: 'District', image: '/Photos/vivaan-ghaziabad-district.webp' },
+  { title: "Vritti's U-17 Win", tag: 'District', rank: 'District', image: '/Photos/vritti-jain-ghaziabad-district.webp' },
+  { title: "Veidika's Grand Slam", tag: 'Tournament', rank: 'Other', image: '/Photos/veidika-sapra-grand-slam.webp' },
+  { title: 'Academy Event', tag: 'Academy', rank: 'Other', image: '/Photos/testimonial-aarav.webp' },
+  { title: 'Training Focus', tag: 'Coaching', rank: 'Other', image: '/Photos/testimonial-neha.webp' },
+  { title: 'Student Match', tag: 'Academy', rank: 'Other', image: '/Photos/about-page-training.webp' },
+  { title: 'Championship Prep', tag: 'Academy', rank: 'Other', image: '/Photos/championship-prep-academy.webp' },
+  { title: 'Group Session', tag: 'Coaching', rank: 'Other', image: '/Photos/training-moment-group.webp' },
 ];
 
 const rankOrder = { National: 0, State: 1, District: 2, Other: 3 };
@@ -358,6 +292,40 @@ const achievements = [
   },
 ];
 
+// Rising Chess Stars — using existing student data in hierarchy order
+const risingStars = [
+  {
+    name: 'Kavish Saxena',
+    rank: 'National',
+    description: 'National Rank Holder — 1st Runner Up, 13th National Amateur Championship 2026',
+    image: '/Photos/kavish-saxena-national-amateur.webp',
+  },
+  {
+    name: 'Vivaan Varoon',
+    rank: 'State',
+    description: 'UP State Championship — 3rd (U-13) & 4th (U-11) Place',
+    image: '/Photos/vivaan-varoon-up-state-u11.webp',
+  },
+  {
+    name: 'Aadwan Gupta',
+    rank: 'District',
+    description: '1st Position — G B Nagar District Chess Championship 2026 (U-13)',
+    image: '/Photos/aadwan-gupta-gb-nagar.webp',
+  },
+  {
+    name: 'Vritti Jain',
+    rank: 'District',
+    description: '1st Place — Ghaziabad District Championship (U-17)',
+    image: '/Photos/vritti-jain-ghaziabad-district.webp',
+  },
+  {
+    name: 'Veidika Sapra',
+    rank: 'Tournament',
+    description: '1st Runner Up — Grand Slam Tournament',
+    image: '/Photos/veidika-sapra-grand-slam.webp',
+  },
+];
+
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -367,6 +335,7 @@ function App() {
   if (currentPath === '/') activePage = 'home';
   else if (currentPath === '/about') activePage = 'about';
   else if (currentPath === '/courses') activePage = 'courses';
+  else if (currentPath === '/achievements') activePage = 'achievements';
   else if (currentPath === '/trainers') activePage = 'trainers';
   else if (currentPath === '/gallery') activePage = 'gallery';
   else if (currentPath === '/testimonials') activePage = 'testimonials';
@@ -483,6 +452,7 @@ function App() {
           <Route path="/" element={<HomePage goTo={goTo} />} />
           <Route path="/about" element={<AboutPage goTo={goTo} />} />
           <Route path="/courses" element={<CoursesPage goTo={goTo} />} />
+          <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/trainers" element={<TrainersPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/testimonials" element={<TestimonialsPage goTo={goTo} />} />
@@ -517,7 +487,7 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
         </span>
         <span>
           <strong>Rituraj Chess Academy</strong>
-          <small>Ghaziabad</small>
+          <small>Where Champions Are Made</small>
         </span>
       </Link>
 
@@ -534,8 +504,8 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
       </nav>
 
       <div className="header-actions">
-        <Link className="ghost-button" to="/contact">
-          Enquire
+        <Link className="primary-button header-demo-btn" to="/contact" style={{ minHeight: '40px', fontSize: '0.85rem', padding: '0 16px' }}>
+          <span className="hide-on-mobile">Book Free Demo</span> <Trophy size={16} />
         </Link>
         <button
           className="menu-button"
@@ -580,33 +550,303 @@ function Hero({ goTo }) {
             <Sparkles size={16} />
             Premium chess coaching in Ghaziabad
           </span>
-          <h1>Rituraj Chess Academy</h1>
+          <h1>
+            RITURAJ<br />CHESS ACADEMY
+            <span className="hero-subtitle">Where Champions Are Made</span>
+          </h1>
           <p>
-            A focused training academy for young players who want stronger
-            calculation, smarter strategy, and real tournament confidence.
+            We nurture young talents with expert guidance,
+            structured training and a passion for excellence.
           </p>
+          <div className="hero-features">
+            <div className="hero-feature-badge">
+              <ShieldCheck size={18} />
+              FIDE Rated Coaching
+            </div>
+            <div className="hero-feature-badge">
+              <Trophy size={18} />
+              Tournament Preparation
+            </div>
+            <div className="hero-feature-badge">
+              <Users size={18} />
+              Online & Offline Classes
+            </div>
+          </div>
           <div className="hero-actions">
-            <button className="primary-button" onClick={() => goTo('courses')} type="button">
-              Explore Programs
+            <button className="primary-button" onClick={() => goTo('contact')} type="button">
+              BOOK FREE DEMO CLASS
               <ChevronRight size={18} />
             </button>
-            <button className="secondary-button" onClick={() => goTo('contact')} type="button">
-              Book Inquiry
+            <button className="secondary-button" onClick={() => goTo('courses')} type="button">
+              JOIN TOURNAMENT
             </button>
           </div>
-          <div className="hero-trust-row" aria-label="Academy highlights">
-            <span>Age 6+</span>
-            <span>Offline and online guidance</span>
-            <span>Tournament readiness</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RisingStarsSection({ goTo }) {
+  return (
+    <section className="rising-stars-section">
+      <div className="section-wrap">
+        <div className="rising-stars-header">
+          <span className="section-kicker">
+            <Star size={14} fill="currentColor" /> OUR RISING CHESS STARS <Star size={14} fill="currentColor" />
+          </span>
+          <h2>Rising Chess Stars</h2>
+          <div className="decorative-line">Current Champions & Rank Holders</div>
+        </div>
+        <div className="stars-grid">
+          {risingStars.map((star) => (
+            <div className="star-card" key={star.name}>
+              <img className="star-card-image" src={star.image} alt={star.name} loading="lazy" />
+              <h3>{star.name}</h3>
+              <div className="star-rank">{star.rank}</div>
+              <div className="star-desc">{star.description}</div>
+            </div>
+          ))}
+        </div>
+        <div className="rising-stars-footer">
+          <button className="ghost-button" onClick={() => goTo('achievements')} type="button">
+            VIEW ALL ACHIEVEMENTS
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatsBar() {
+  return (
+    <section className="stats-band">
+      <div className="section-wrap stats-grid">
+        {highlights.map(({ icon: Icon, value, label }) => (
+          <article className="stat-card" key={label}>
+            <Icon size={24} />
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function AboutCoachAchievements({ goTo }) {
+  return (
+    <section className="about-trio-section">
+      <div className="section-wrap">
+        <div className="about-trio-grid">
+          {/* About */}
+          <div className="about-trio-card">
+            <h3><Award size={20} /> About Rituraj Academy</h3>
+            <p>
+              At Rituraj Academy, we believe every move shapes a champion. Our mission is to provide world-class chess training to students of all levels and help them achieve their dreams.
+            </p>
+            <ul>
+              <li><CheckCircle2 size={16} /> Professional & FIDE Rated Coaching</li>
+              <li><CheckCircle2 size={16} /> Personal Attention</li>
+              <li><CheckCircle2 size={16} /> Regular Tournaments & Practice Sessions</li>
+              <li><CheckCircle2 size={16} /> Proven Track Record of Success</li>
+            </ul>
+            <button className="text-button" onClick={() => goTo('about')} type="button" style={{ marginTop: '16px' }}>
+              KNOW MORE ABOUT US <ChevronRight size={16} />
+            </button>
+          </div>
+
+          {/* Coach */}
+          <div className="about-trio-card">
+            <h3><Users size={20} /> Meet Our Coach</h3>
+            <div className="coach-image-container">
+              <img src="/Photos/Rituraj Singh.webp" alt="Coach Rituraj Singh" loading="lazy" />
+            </div>
+            <span className="coach-name">Coach Rituraj</span>
+            <ul>
+              <li><CheckCircle2 size={16} /> Professional Chess Trainer</li>
+              <li><CheckCircle2 size={16} /> FIDE Rated Coach</li>
+              <li><CheckCircle2 size={16} /> Tournament Organizer</li>
+              <li><CheckCircle2 size={16} /> Mentor of State & National Level Players</li>
+            </ul>
+          </div>
+
+          {/* Achievements */}
+          <div className="about-trio-card">
+            <h3><Trophy size={20} /> Our Achievements</h3>
+            <ul>
+              <li><Trophy size={16} /> State Champions</li>
+              <li><Trophy size={16} /> National Participants</li>
+              <li><Trophy size={16} /> District Winners</li>
+              <li><Trophy size={16} /> School Champions</li>
+            </ul>
+            <button className="text-button" onClick={() => goTo('achievements')} type="button" style={{ marginTop: '16px' }}>
+              VIEW ALL ACHIEVEMENTS <ChevronRight size={16} />
+            </button>
           </div>
         </div>
-        <div className="hero-panel">
-          <span>Next batch focus</span>
-          <strong>Tactics, tournament discipline, and guided game review</strong>
-          <div className="mini-metrics">
-            <b>4</b>
-            <small>Program levels</small>
+      </div>
+    </section>
+  );
+}
+
+function TournamentSection() {
+  return (
+    <section className="tournament-section">
+      <div className="section-wrap">
+        <div className="tournament-card">
+          <div>
+            <span className="section-kicker">UPCOMING TOURNAMENT</span>
+            <h2>CHESS MAHAYUDH<br />SERIES</h2>
+            <div className="tournament-details">
+              <div className="tournament-detail">
+                <CalendarDays size={20} />
+                <div>
+                  <strong>Date</strong>
+                  27th June 2026
+                </div>
+              </div>
+              <div className="tournament-detail">
+                <MapPin size={20} />
+                <div>
+                  <strong>Venue</strong>
+                  HLM College, Ghaziabad
+                </div>
+              </div>
+              <div className="tournament-detail">
+                <Trophy size={20} />
+                <div>
+                  <strong>Event</strong>
+                  2nd Mahayudh Chess Tournament
+                </div>
+              </div>
+            </div>
           </div>
+          <div className="tournament-cta">
+            <div className="chess-icon-large">♞</div>
+            <a
+              className="primary-button"
+              href="https://wa.me/918076940504?text=I%20want%20to%20register%20for%20the%202nd%20Mahayudh%20Chess%20Tournament"
+              target="_blank"
+              rel="noreferrer"
+            >
+              REGISTER NOW
+              <ChevronRight size={18} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GalleryStrip({ goTo }) {
+  const categories = [
+    { label: 'Prize Distribution', items: gallery.filter(g => g.tag === 'National') },
+    { label: 'Tournaments', items: gallery.filter(g => g.tag === 'State' || g.tag === 'District') },
+    { label: 'Training Sessions', items: gallery.filter(g => g.tag === 'Coaching') },
+    { label: 'Winners', items: gallery.filter(g => g.tag === 'Tournament') },
+    { label: 'Events', items: gallery.filter(g => g.tag === 'Academy') },
+  ];
+
+  return (
+    <section className="gallery-strip-section">
+      <div className="section-wrap">
+        <div className="gallery-strip-header">
+          <div>
+            <span className="section-kicker">Gallery</span>
+            <h2>GALLERY</h2>
+          </div>
+        </div>
+        <div className="gallery-scroll-container">
+          <div className="gallery-scroll-track">
+            {gallery.slice(0, 10).map((item, idx) => (
+              <div className="gallery-strip-card" key={idx}>
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <span>{item.title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="gallery-strip-footer">
+          <button className="ghost-button" onClick={() => goTo('gallery')} type="button">
+            VIEW ALL PHOTOS
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TrainingPrograms({ goTo }) {
+  const programs = [
+    {
+      title: 'BEGINNER',
+      range: '(0 - 800)',
+      points: ['Rules & Fundamentals', 'Basic Tactics', 'Checkmate Patterns'],
+    },
+    {
+      title: 'INTERMEDIATE',
+      range: '(800 - 1400)',
+      points: ['Opening Principles', 'Tactical Training', 'Game Analysis'],
+    },
+    {
+      title: 'ADVANCED',
+      range: '(1400+)',
+      points: ['Tournament Preparation', 'Positional Play', 'Endgame Mastery'],
+    },
+  ];
+
+  return (
+    <section className="training-programs-section">
+      <div className="section-wrap">
+        <div className="training-header">
+          <span className="section-kicker">Our Training Programs</span>
+          <h2>OUR TRAINING PROGRAMS</h2>
+        </div>
+        <div className="training-grid">
+          {programs.map((prog) => (
+            <div className="training-card" key={prog.title}>
+              <div className="training-card-header">
+                <h3>{prog.title}</h3>
+                <div className="rating-range">{prog.range}</div>
+              </div>
+              <ul>
+                {prog.points.map((point) => (
+                  <li key={point}>
+                    <CheckCircle2 size={16} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <button className="text-button" onClick={() => goTo('courses')} type="button" style={{ marginTop: '20px' }}>
+                LEARN MORE <ChevronRight size={16} />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsPreview({ goTo }) {
+  return (
+    <section className="testimonial-band">
+      <div className="section-wrap">
+        <div className="section-heading light">
+          <span className="section-kicker">What Parents & Students Say</span>
+          <h2>WHAT PARENTS & STUDENTS SAY</h2>
+          <button className="text-button light" onClick={() => goTo('testimonials')} type="button">
+            Read more stories <ChevronRight size={16} />
+          </button>
+        </div>
+        <div className="testimonial-grid preview">
+          {testimonials.slice(0, 3).map((item) => (
+            <TestimonialCard key={item.name} item={item} />
+          ))}
         </div>
       </div>
     </section>
@@ -700,36 +940,16 @@ function HomePage({ goTo }) {
     <>
       <AnnouncementMarquee />
       <Hero goTo={goTo} />
-      <section className="section-wrap stats-grid">
-        {highlights.map(({ icon: Icon, value, label }) => (
-          <article className="stat-card" key={label}>
-            <Icon size={24} />
-            <strong>{value}</strong>
-            <span>{label}</span>
-          </article>
-        ))}
-      </section>
-      <section className="section-wrap split-section">
-        <div>
-          <span className="section-kicker">Academy Introduction</span>
-          <h2>Training that turns good moves into good habits.</h2>
-        </div>
-        <div className="rich-text">
-          <p>
-            Rituraj Chess Academy offers structured chess coaching for students
-            at every stage, from first-time learners to tournament-ready players.
-            Each program combines concepts, puzzles, practice games, and
-            analysis so students learn how to think under pressure.
-          </p>
-          <button className="text-button" onClick={() => goTo('about')} type="button">
-            Know the academy <ChevronRight size={16} />
-          </button>
-        </div>
-      </section>
-      <FeaturedChampions goTo={goTo} />
-      <CoursesPreview goTo={goTo} />
+      <RisingStarsSection goTo={goTo} />
+      <StatsBar />
+      <AboutCoachAchievements goTo={goTo} />
+      <TournamentSection />
+      <GalleryStrip goTo={goTo} />
+      <TrainingPrograms goTo={goTo} />
       <TestimonialsPreview goTo={goTo} />
-      <CtaBand goTo={goTo} />
+      <section className="cta-section">
+        <CtaBand goTo={goTo} />
+      </section>
     </>
   );
 }
@@ -788,18 +1008,55 @@ function AboutPage({ goTo }) {
           )}
         />
       </section>
-      <section className="section-wrap why-grid">
-        {[
-          ['Clear curriculum', 'Every batch follows a visible learning path.'],
-          ['Expert feedback', 'Games are reviewed with actionable improvement points.'],
-          ['Tournament focus', 'Students learn clock handling and match temperament.'],
-          ['Parent clarity', 'Progress is shared in simple, useful language.'],
-        ].map(([title, text]) => (
-          <article key={title}>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
+      <section className="section-wrap" style={{ paddingBottom: '88px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', paddingTop: '40px' }}>
+          {[
+            ['Clear curriculum', 'Every batch follows a visible learning path.'],
+            ['Expert feedback', 'Games are reviewed with actionable improvement points.'],
+            ['Tournament focus', 'Students learn clock handling and match temperament.'],
+            ['Parent clarity', 'Progress is shared in simple, useful language.'],
+          ].map(([title, text]) => (
+            <article key={title} style={{ padding: '24px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '14px' }}>
+              <h3 style={{ color: '#fff', fontFamily: 'var(--heading-font)', margin: '0 0 8px', fontSize: '1.2rem' }}>{title}</h3>
+              <p style={{ color: 'var(--muted)', margin: 0, lineHeight: '1.6' }}>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function AchievementsPage() {
+  return (
+    <>
+      <PageIntro
+        icon={Trophy}
+        title="Our Achievements"
+        text="Celebrating the victories and growth of our students at National, State, and District level competitions."
+        bgImage="/Photos/chess_bg_2.webp"
+      />
+      <section className="section-wrap achievements-section">
+        <div className="achievements-header">
+          <span className="section-kicker">Champions Gallery</span>
+          <h2>Celebrating Our Champions.</h2>
+        </div>
+        <HierarchicalSection 
+          data={achievements}
+          gridClassName="achievement-grid"
+          renderItem={(item, idx) => (
+            <article className="achievement-card" key={idx}>
+              <div className="achievement-image-wrap">
+                <img loading="lazy" src={item.image} alt={item.title} />
+                <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
+              </div>
+              <div className="achievement-content">
+                <h3><Trophy size={20} className="trophy-icon" /> {item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          )}
+        />
       </section>
     </>
   );
@@ -808,7 +1065,7 @@ function AboutPage({ goTo }) {
 function PageIntro({ icon: Icon, title, text, bgImage, image, children }) {
   const bgStyle = bgImage 
     ? { 
-        background: `linear-gradient(90deg, rgba(16, 22, 36, 0.92), rgba(16, 22, 36, 0.65)), url("${bgImage}")`,
+        background: `linear-gradient(90deg, rgba(10, 14, 22, 0.94), rgba(10, 14, 22, 0.7)), url("${bgImage}")`,
         backgroundPosition: 'center',
         backgroundSize: 'cover'
       }
@@ -840,7 +1097,7 @@ function FeaturedChampions({ goTo }) {
         <div className="section-heading">
           <span className="section-kicker">Our Champions</span>
           <h2>Recent victories that make us proud.</h2>
-          <button className="text-button" onClick={() => goTo('about')} type="button">
+          <button className="text-button" onClick={() => goTo('achievements')} type="button">
             View all achievements <ChevronRight size={16} />
           </button>
         </div>
@@ -1013,27 +1270,6 @@ function GalleryPage() {
   );
 }
 
-function TestimonialsPreview({ goTo }) {
-  return (
-    <section className="testimonial-band">
-      <div className="section-wrap">
-        <div className="section-heading light">
-          <span className="section-kicker">Testimonials Preview</span>
-          <h2>Parents and students notice the discipline.</h2>
-          <button className="text-button light" onClick={() => goTo('testimonials')} type="button">
-            Read more stories <ChevronRight size={16} />
-          </button>
-        </div>
-        <div className="testimonial-grid preview">
-          {testimonials.slice(0, 3).map((item) => (
-            <TestimonialCard key={item.name} item={item} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function TestimonialsPage({ goTo }) {
   return (
     <>
@@ -1052,7 +1288,9 @@ function TestimonialsPage({ goTo }) {
           )}
         />
       </section>
-      <CtaBand goTo={goTo} />
+      <section className="cta-section">
+        <CtaBand goTo={goTo} />
+      </section>
     </>
   );
 }
@@ -1079,6 +1317,7 @@ function TestimonialCard({ item }) {
     </article>
   );
 }
+
 function FeedbackPage() {
   const [formState, setFormState] = useState({
     name: '',
@@ -1175,46 +1414,19 @@ function FeedbackPage() {
         <form onSubmit={handleSubmit} className="inquiry-form">
           <label>
             Full Name *
-            <input
-              type="text"
-              required
-              value={formState.name}
-              onChange={(e) => updateField('name', e.target.value)}
-              placeholder="Your name"
-              disabled={submitting}
-            />
+            <input type="text" required value={formState.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Your name" disabled={submitting} />
           </label>
-
           <label>
             Email Address *
-            <input
-              type="email"
-              required
-              value={formState.email}
-              onChange={(e) => updateField('email', e.target.value)}
-              placeholder="you@example.com"
-              disabled={submitting}
-            />
+            <input type="email" required value={formState.email} onChange={(e) => updateField('email', e.target.value)} placeholder="you@example.com" disabled={submitting} />
           </label>
-
           <label>
             Phone Number (Optional)
-            <input
-              type="tel"
-              value={formState.phone}
-              onChange={(e) => updateField('phone', e.target.value)}
-              placeholder="+91"
-              disabled={submitting}
-            />
+            <input type="tel" value={formState.phone} onChange={(e) => updateField('phone', e.target.value)} placeholder="+91" disabled={submitting} />
           </label>
-
           <label>
             Feedback Category *
-            <select
-              value={formState.category}
-              onChange={(e) => updateField('category', e.target.value)}
-              disabled={submitting}
-            >
+            <select value={formState.category} onChange={(e) => updateField('category', e.target.value)} disabled={submitting}>
               <option value="Coaching Quality">Coaching Quality</option>
               <option value="Website Experience">Website Experience</option>
               <option value="Facilities">Facilities & Environment</option>
@@ -1222,14 +1434,9 @@ function FeedbackPage() {
               <option value="Testimonial">Testimonial</option>
             </select>
           </label>
-
           <label>
             Rating (1-5) *
-            <select
-              value={formState.rating}
-              onChange={(e) => updateField('rating', e.target.value)}
-              disabled={submitting}
-            >
+            <select value={formState.rating} onChange={(e) => updateField('rating', e.target.value)} disabled={submitting}>
               <option value="5">⭐⭐⭐⭐⭐ (5) Excellent</option>
               <option value="4">⭐⭐⭐⭐ (4) Good</option>
               <option value="3">⭐⭐⭐ (3) Average</option>
@@ -1237,27 +1444,15 @@ function FeedbackPage() {
               <option value="1">⭐ (1) Terrible</option>
             </select>
           </label>
-
-          <label>
+          <label className="full-field">
             Your Feedback *
-            <textarea
-              required
-              rows={4}
-              value={formState.message}
-              onChange={(e) => updateField('message', e.target.value)}
-              placeholder="Tell us about your experience..."
-              disabled={submitting}
-            />
+            <textarea required rows={4} value={formState.message} onChange={(e) => updateField('message', e.target.value)} placeholder="Tell us about your experience..." disabled={submitting} />
           </label>
-
           <button type="submit" disabled={submitting} className="submit-btn">
             {submitting ? 'Submitting Feedback...' : 'Submit Feedback'}
           </button>
-
           {status.message && (
-            <div className={`status-message ${status.type}`}>
-              {status.message}
-            </div>
+            <div className={`status-message ${status.type}`}>{status.message}</div>
           )}
         </form>
       </section>
@@ -1319,41 +1514,19 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
         <form className="inquiry-form" onSubmit={handleSubmit}>
           <label>
             Student or Parent Name
-            <input
-              value={formState.name}
-              onChange={(event) => updateField('name', event.target.value)}
-              type="text"
-              placeholder="Enter full name"
-              required
-            />
+            <input value={formState.name} onChange={(event) => updateField('name', event.target.value)} type="text" placeholder="Enter full name" required />
           </label>
           <label>
             Email Address
-            <input
-              value={formState.email}
-              onChange={(event) => updateField('email', event.target.value)}
-              type="email"
-              placeholder="name@example.com"
-              required
-            />
+            <input value={formState.email} onChange={(event) => updateField('email', event.target.value)} type="email" placeholder="name@example.com" required />
           </label>
           <label>
             Phone Number
-            <input
-              value={formState.phone}
-              onChange={(event) => updateField('phone', event.target.value)}
-              type="tel"
-              placeholder="+91"
-              required
-            />
+            <input value={formState.phone} onChange={(event) => updateField('phone', event.target.value)} type="tel" placeholder="+91" required />
           </label>
           <label>
             Program
-            <select
-              value={formState.program}
-              onChange={(event) => updateField('program', event.target.value)}
-              required
-            >
+            <select value={formState.program} onChange={(event) => updateField('program', event.target.value)} required>
               {courses.map((course) => (
                 <option key={course.title}>{course.title}</option>
               ))}
@@ -1361,12 +1534,7 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
           </label>
           <label className="full-field">
             Message
-            <textarea
-              value={formState.message}
-              onChange={(event) => updateField('message', event.target.value)}
-              placeholder="Tell us about the student's age, level, and goals"
-              required
-            />
+            <textarea value={formState.message} onChange={(event) => updateField('message', event.target.value)} placeholder="Tell us about the student's age, level, and goals" required />
           </label>
           {status.message && <p className={`form-status ${status.type}`}>{status.message}</p>}
           <button className="primary-button full-field" disabled={submitting} type="submit">
@@ -1380,7 +1548,7 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
 
 function CtaBand({ goTo }) {
   return (
-    <section className="section-wrap cta-band">
+    <div className="section-wrap cta-band">
       <div>
         <span className="section-kicker">Call to Action</span>
         <h2>Ready to help a student think sharper on the board?</h2>
@@ -1392,7 +1560,7 @@ function CtaBand({ goTo }) {
       <button className="primary-button" onClick={() => goTo('contact')} type="button">
         Contact Academy
       </button>
-    </section>
+    </div>
   );
 }
 
@@ -1421,21 +1589,40 @@ function Footer() {
             </span>
             <span>
               <strong>Rituraj Chess Academy</strong>
-              <small>Think better. Play stronger.</small>
+              <small>Where Champions Are Made</small>
             </span>
           </Link>
           <p>
-            Premium chess coaching, tournament preparation, and structured
-            training programs in Ghaziabad.
+            Empowering young minds with the power of strategy, focus and confidence.
           </p>
+          <div className="footer-social">
+            <a href="https://wa.me/918076940504" target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle size={18} /></a>
+            <a href="tel:+918076940504" aria-label="Phone"><Phone size={18} /></a>
+            <a href="mailto:riturajchessacademy@gmail.com" aria-label="Email"><Mail size={18} /></a>
+          </div>
         </div>
         <div>
-          <h2>Pages</h2>
+          <h2>Quick Links</h2>
           {navItems.map((item) => (
             <Link key={item.path} to={item.path}>
               {item.label}
             </Link>
           ))}
+        </div>
+        <div>
+          <h2>Contact Us</h2>
+          <a href="tel:+918076940504">+91 8076 940 504</a>
+          <a href="mailto:riturajchessacademy@gmail.com">riturajchessacademy@gmail.com</a>
+          <span>Rituraj Chess Academy, Ghaziabad, Uttar Pradesh, India</span>
+          <a
+            className="whatsapp-link"
+            href="https://wa.me/918076940504"
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: 'inline-flex', marginTop: '12px', minHeight: '38px', fontSize: '0.85rem', borderRadius: '6px', gap: '8px', padding: '0 14px' }}
+          >
+            WHATSAPP US
+          </a>
         </div>
         <div>
           <h2>Legal</h2>
@@ -1444,20 +1631,21 @@ function Footer() {
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/refund">Refund Policy</Link>
         </div>
-        <div>
-          <h2>Contact</h2>
-          <a href="mailto:riturajchessacademy@gmail.com">riturajchessacademy@gmail.com</a>
-          <a href="tel:+918076940504">+91 8076 940 504</a>
-          <span>Rajnagar Extension, Ghaziabad</span>
-          <a
-            className="developed-by"
-            href="https://www.nextgenix.in/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Developed by NextGenix
-          </a>
-        </div>
+      </div>
+      <div className="section-wrap footer-bottom">
+        <span>© 2024 Rituraj Chess Academy. All Rights Reserved.</span>
+        <span className="designed-with">
+          Designed with ❤ for Future Champions
+        </span>
+        <a
+          className="developed-by"
+          href="https://www.nextgenix.in/"
+          target="_blank"
+          rel="noreferrer"
+          style={{ margin: 0 }}
+        >
+          Developed by NextGenix
+        </a>
       </div>
     </footer>
   );
