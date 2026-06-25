@@ -34,6 +34,7 @@ const navItems = [
   { label: 'Trainers', path: '/trainers' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Contact', path: '/contact' },
+  { label: 'Feedback', path: '/feedback' },
 ];
 
 const pageMeta = {
