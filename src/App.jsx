@@ -704,12 +704,18 @@ function AboutCoachAchievements({ goTo }) {
             </div>
             
             <div className="coach-image-container">
-              <img 
-                src={activeCoach.image} 
-                alt={activeCoach.name} 
-                loading="lazy" 
-                style={{ objectPosition: activeCoach.name === 'Rituraj Singh' ? 'top center' : 'center' }}
-              />
+              {trainers.map((trainer, idx) => (
+                <img 
+                  key={trainer.name}
+                  src={trainer.image} 
+                  alt={trainer.name} 
+                  loading="eager" 
+                  style={{ 
+                    display: activeCoachIndex === idx ? 'block' : 'none',
+                    objectPosition: trainer.name === 'Rituraj Singh' ? 'top center' : 'center' 
+                  }}
+                />
+              ))}
             </div>
             <span className="coach-name">{activeCoach.name}</span>
             <span style={{ display: 'block', color: 'var(--gold-light)', fontSize: '1rem', marginBottom: '16px', fontStyle: 'italic', fontFamily: 'var(--heading-font)' }}>{activeCoach.role}</span>
