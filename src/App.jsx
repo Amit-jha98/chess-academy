@@ -637,6 +637,19 @@ function StatsBar() {
 }
 
 function AboutCoachAchievements({ goTo }) {
+  const [activeCoachIndex, setActiveCoachIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      setActiveCoachIndex((prev) => (prev + 1) % trainers.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isHovered]);
+
+  const activeCoach = trainers[activeCoachIndex];
+
   return (
     <section className="about-trio-section">
       <div className="section-wrap">
@@ -658,18 +671,53 @@ function AboutCoachAchievements({ goTo }) {
             </button>
           </div>
 
-          {/* Coach */}
-          <div className="about-trio-card">
-            <h3><Users size={20} /> Meet Our Coach</h3>
-            <div className="coach-image-container">
-              <img src="/Photos/Rituraj Singh.webp" alt="Coach Rituraj Singh" loading="lazy" />
+          {/* Coaches */}
+          <div 
+            className="about-trio-card"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+              <h3 style={{ margin: 0 }}><Users size={20} /> Meet Our Coaches</h3>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                {trainers.map((trainer, idx) => (
+                  <button 
+                    key={trainer.name}
+                    onClick={() => setActiveCoachIndex(idx)}
+                    type="button"
+                    style={{
+                      padding: '4px 12px',
+                      borderRadius: '20px',
+                      border: `1px solid ${activeCoachIndex === idx ? 'var(--gold)' : 'rgba(255,255,255,0.2)'}`,
+                      background: activeCoachIndex === idx ? 'rgba(212, 175, 55, 0.1)' : 'transparent',
+                      color: activeCoachIndex === idx ? 'var(--gold)' : 'var(--muted)',
+                      fontSize: '0.8rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      fontWeight: activeCoachIndex === idx ? '800' : '600'
+                    }}
+                  >
+                    {trainer.name.split(' ')[0]}
+                  </button>
+                ))}
+              </div>
             </div>
-            <span className="coach-name">Coach Rituraj</span>
+            
+            <div className="coach-image-container">
+              <img 
+                src={activeCoach.image} 
+                alt={activeCoach.name} 
+                loading="lazy" 
+                style={{ objectPosition: activeCoach.name === 'Rituraj Singh' ? 'top center' : 'center' }}
+              />
+            </div>
+            <span className="coach-name">{activeCoach.name}</span>
+            <span style={{ display: 'block', color: 'var(--gold-light)', fontSize: '1rem', marginBottom: '16px', fontStyle: 'italic', fontFamily: 'var(--heading-font)' }}>{activeCoach.role}</span>
             <ul>
-              <li><CheckCircle2 size={16} /> Professional Chess Trainer</li>
-              <li><CheckCircle2 size={16} /> FIDE Rated Coach</li>
-              <li><CheckCircle2 size={16} /> Tournament Organizer</li>
-              <li><CheckCircle2 size={16} /> Mentor of State & National Level Players</li>
+              <li><CheckCircle2 size={16} /> {activeCoach.details}</li>
+              {activeCoach.stats.slice(0, 3).map((stat, idx) => (
+                <li key={idx}><CheckCircle2 size={16} /> {stat}</li>
+              ))}
             </ul>
           </div>
 
@@ -1634,7 +1682,7 @@ function Footer() {
         </div>
       </div>
       <div className="section-wrap footer-bottom">
-        <span>© 2024 Rituraj Chess Academy. All Rights Reserved.</span>
+        <span>© 2026 Rituraj Chess Academy. All Rights Reserved.</span>
         <span className="designed-with">
           Designed with ❤ for Future Champions
         </span>
