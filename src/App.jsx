@@ -26,6 +26,32 @@ import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 
 const ChessHeroScene = lazy(() => import('./ChessHeroScene.jsx'));
 
+const academyName = 'Rituraj Academy';
+
+const seoKeywords = [
+  'Best Chess Academy in Ghaziabad',
+  'Affordable Chess Academy in Ghaziabad',
+  'Chess Classes in Ghaziabad',
+  'Chess Coaching in Ghaziabad',
+  'Chess Classes Near Me',
+  'Chess Academy in Raj Nagar Extension',
+  'Chess Coaching in Raj Nagar',
+  'Chess Classes in Kavi Nagar',
+  'Chess Academy in Noida',
+  'Kids Chess Classes',
+  'Online Chess Classes India',
+  'FIDE Rated Chess Coach',
+  'Chess Tournament Training',
+  'Beginner Chess Classes',
+  'Advanced Chess Coaching',
+  'Tournament Chess Coaching',
+  'FIDE Tournament Training',
+  'State Level Chess Coaching',
+  'National Chess Coaching',
+  'District Chess Coaching',
+  'Chess Championship Preparation',
+];
+
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
@@ -39,60 +65,72 @@ const navItems = [
 
 const pageMeta = {
   home: {
-    title: 'Rituraj Chess Academy | Chess Coaching in Ghaziabad',
+    title: 'Rituraj Academy | Best Chess Academy in Ghaziabad',
     description:
-      'Premium chess coaching in Ghaziabad with beginner, intermediate, advanced, and tournament preparation programs.',
+      'Rituraj Academy offers chess coaching in Ghaziabad, kids chess classes, online chess classes, FIDE tournament training, and chess championship preparation.',
+    keywords: seoKeywords.join(', '),
   },
   about: {
-    title: 'About Rituraj Chess Academy | Mission, Vision and Achievements',
+    title: 'About Rituraj Academy | Chess Coaching in Raj Nagar Extension',
     description:
-      'Learn about Rituraj Chess Academy, its coaching mission, student achievements, and structured chess training approach.',
+      'Learn about Rituraj Academy, our coaching mission, student achievements, and structured chess training approach in Raj Nagar Extension, Ghaziabad.',
+    keywords: seoKeywords.join(', '),
   },
   courses: {
-    title: 'Chess Courses in Ghaziabad | Rituraj Chess Academy',
+    title: 'Chess Classes in Ghaziabad | Rituraj Academy Courses',
     description:
-      'Explore beginner, intermediate, advanced, and tournament preparation chess programs at Rituraj Chess Academy.',
+      'Explore beginner chess classes, advanced chess coaching, kids chess classes, and chess tournament training at Rituraj Academy.',
+    keywords: seoKeywords.join(', '),
   },
   achievements: {
-    title: 'Achievements | Rituraj Chess Academy Ghaziabad',
+    title: 'Achievements | Rituraj Academy Student Chess Champions',
     description:
-      'Celebrating champions — National, State, and District level chess achievements by our students.',
+      'Celebrating National, State, District, and tournament chess achievements by Rituraj Academy students.',
+    keywords: seoKeywords.join(', '),
   },
   trainers: {
-    title: 'Chess Trainers | Rituraj Chess Academy Ghaziabad',
+    title: 'FIDE Rated Chess Coach | Rituraj Academy Trainers',
     description:
-      'Meet experienced chess coaches focused on tactics, strategy, tournament preparation, and student progress.',
+      'Meet experienced chess coaches focused on FIDE rated coaching, tactics, strategy, tournament preparation, and student progress.',
+    keywords: seoKeywords.join(', '),
   },
   gallery: {
-    title: 'Chess Academy Gallery | Tournaments and Training Sessions',
+    title: 'Chess Academy Gallery | Rituraj Academy Tournaments',
     description:
-      'View chess tournament photos, event images, training session visuals, and student match moments.',
+      'View Rituraj Academy chess tournament photos, event images, training session visuals, and student achievement moments.',
+    keywords: seoKeywords.join(', '),
   },
   testimonials: {
-    title: 'Student and Parent Testimonials | Rituraj Chess Academy',
+    title: 'Student and Parent Testimonials | Rituraj Academy',
     description:
-      'Read student reviews, parent feedback, and success stories from Rituraj Chess Academy learners.',
+      'Read student reviews, parent feedback, and success stories from Rituraj Academy learners.',
+    keywords: seoKeywords.join(', '),
   },
   contact: {
-    title: 'Contact Rituraj Chess Academy | Chess Admission Inquiry',
+    title: 'Contact Rituraj Academy | Chess Admission Inquiry',
     description:
-      'Contact Rituraj Chess Academy in Ghaziabad for chess classes, program schedules, and admission inquiries.',
+      'Contact Rituraj Academy in Ghaziabad for chess classes, program schedules, demo classes, and admission inquiries.',
+    keywords: seoKeywords.join(', '),
   },
   terms: {
-    title: 'Terms & Conditions | Rituraj Chess Academy',
-    description: 'Terms and Conditions for enrollment and use of Rituraj Chess Academy services.',
+    title: 'Terms & Conditions | Rituraj Academy',
+    description: 'Terms and Conditions for enrollment and use of Rituraj Academy services.',
+    keywords: seoKeywords.join(', '),
   },
   privacy: {
-    title: 'Privacy Policy | Rituraj Chess Academy',
-    description: 'Privacy Policy outlining how Rituraj Chess Academy collects, uses, and protects your data.',
+    title: 'Privacy Policy | Rituraj Academy',
+    description: 'Privacy Policy outlining how Rituraj Academy collects, uses, and protects your data.',
+    keywords: seoKeywords.join(', '),
   },
   refund: {
-    title: 'Refund Policy | Rituraj Chess Academy',
-    description: 'Refund and cancellation policy for Rituraj Chess Academy programs.',
+    title: 'Refund Policy | Rituraj Academy',
+    description: 'Refund and cancellation policy for Rituraj Academy programs.',
+    keywords: seoKeywords.join(', '),
   },
   feedback: {
-    title: 'Submit Feedback | Rituraj Chess Academy',
+    title: 'Submit Feedback | Rituraj Academy',
     description: 'Share your feedback, reviews, and suggestions about our chess coaching programs and facilities.',
+    keywords: seoKeywords.join(', '),
   },
 };
 
@@ -151,8 +189,14 @@ const trainers = [
     name: 'Rituraj Singh',
     role: 'Head Coach',
     image: '/Photos/Rituraj Singh.webp',
-    details: 'Experienced chess mentor focused on tactical clarity, game analysis, and tournament readiness.',
+    experience: '8+ Years Coaching Experience',
+    details: 'Experienced chess mentor focused on tactical clarity, game analysis, tournament readiness, and student confidence.',
     stats: [
+      'National Instructor',
+      'Senior National Arbiter',
+      'Tournament organiser',
+      'Selected for All India University in Tamil Nadu',
+      '8+ years of chess coaching experience',
       'Selected for Asian and World Amateur Chess Championships (2024)',
       'International FIDE-rated Chess Player',
       'Winner of Below 1600 Category Prize in Delhi',
@@ -165,8 +209,10 @@ const trainers = [
     name: 'Narayan Gaha',
     role: 'Senior Coach',
     image: '/Photos/Narayan Gaha.webp',
+    experience: '8+ Years Coaching Experience',
     details: 'Expert in competitive match play, opening theory, and building tournament resilience.',
     stats: [
+      '8+ years of chess coaching experience',
       'World FIDE RATING 1753',
       'International FIDE rated chess player',
       'Represent INDIA in 2016 ASIAN JUNIOR CHAMPIONSHIP. (DELHI)',
@@ -204,7 +250,7 @@ const testimonials = [
     type: 'U-13 Champion',
     rank: 'District',
     quote:
-      'Securing 1st position in the G B Nagar District Chess Championship 2026 was a dream come true! Rituraj Chess Academy gave me the training and confidence to win.',
+      `Securing 1st position in the G B Nagar District Chess Championship 2026 was a dream come true! ${academyName} gave me the training and confidence to win.`,
     image: '/Photos/aadwan-gupta-gb-nagar.webp',
   },
   {
@@ -217,7 +263,150 @@ const testimonials = [
   },
 ];
 
+const studentAchievements = [
+  {
+    title: 'Student secured 1st position in U-11 category at HLM Chess Tournament',
+    description: `${academyName} proudly congratulates our student for securing 1st position in the U-11 category at the HLM Chess Tournament.`,
+    image: '/Photos/hlm-u11-first-position.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Abhyudya Sharma secured 2nd position at Radha Govind Chess Tournament',
+    description: `${academyName} congratulates Abhyudya Sharma for securing 2nd position at the Radha Govind Chess Tournament in Meerut.`,
+    image: '/Photos/abhyudya-sharma-radha-govind-runner-up.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Abhyudya Sharma became U-12 champion at Krishna Public School Chess Tournament',
+    description: `${academyName} congratulates Abhyudya Sharma for becoming the U-12 champion at Krishna Public School Chess Tournament with District Chess Association Meerut.`,
+    image: '/Photos/abhyudya-sharma-krishna-public-u12-champion.webp',
+    rank: 'District',
+    tag: 'District',
+  },
+  {
+    title: 'Akshat Shrivastava won trophies at Chess Mahayudh and Speed Chess Championship',
+    description: `${academyName} applauds Akshat Shrivastava for his strong Chess Mahayudh performance, 2nd prize in Speed Chess Championship, and 2nd runner-up finish in Maharathi.`,
+    image: '/Photos/akshat-shrivastava-chess-mahayudh.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Anandita secured 1st position in U-11 at 8th Maharathi Rapid Practice Tournament',
+    description: `${academyName} proudly congratulates Anandita for securing 1st position in the U-11 category at the 8th Maharathi Rapid Practice Tournament.`,
+    image: '/Photos/anandita-maharathi-rapid-u11.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Anandita finished No. 2 overall and No. 1 among girls at NCR Chess Tournament',
+    description: `${academyName} congratulates Anandita for her excellent result in the 6th edition of the NCR Chess Tournament.`,
+    image: '/Photos/anandita-ncr-chess-tournament.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ayaan secured 1st position at Vidhaan Interschool Chess Championship',
+    description: `${academyName} congratulates Ayaan for securing 1st position at the Vidhaan Interschool Chess Championship.`,
+    image: '/Photos/ayaan-vidhaan-interschool-champion.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ayaan secured 3rd position at St. Xavier World School Chess Championship',
+    description: `${academyName} congratulates Ayaan for securing 3rd position at the St. Xavier World School Chess Championship.`,
+    image: '/Photos/ayaan-st-xavier-third-place.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ayaan celebrated a strong chess tournament performance',
+    description: `${academyName} celebrates Ayaan for consistent tournament participation and continued growth through chess championship preparation.`,
+    image: '/Photos/ayaan-chess-achievement.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Bhavya secured 2nd position in Chess Mahayudh U-16 and Ghaziabad District U-17',
+    description: `${academyName} congratulates Bhavya for securing 2nd position in Chess Mahayudh U-16 and 2nd position in the Ghaziabad District Chess Championship U-17 category.`,
+    image: '/Photos/bhavya-chess-mahayudh-district-runner-up.webp',
+    rank: 'District',
+    tag: 'District',
+  },
+  {
+    title: 'Bhavya finished U-17 runner-up in District Chess Championship 2026',
+    description: `${academyName} congratulates Bhavya for finishing runner-up in the U-17 category at the District Chess Championship 2026.`,
+    image: '/Photos/bhavya-u17-district-runner-up.webp',
+    rank: 'District',
+    tag: 'District',
+  },
+  {
+    title: 'Dhwanika stood out at Noida Talent Hunt',
+    description: `${academyName} celebrates Dhwanika for a strong performance at the Noida Talent Hunt chess event.`,
+    image: '/Photos/dhwanika-noida-talent-hunt.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Divyam Pandey secured 4th position at Brainwaves Chess Tournament',
+    description: `${academyName} proudly congratulates Divyam Pandey on securing 4th position at the Brainwaves chess tournament held in Hapur.`,
+    image: '/Photos/divyam-pandey-brainwaves-hapur.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Nabhya Kumar Singh secured 7th position in Chessveda Tournament 2025',
+    description: `${academyName} congratulates Nabhya Kumar Singh for securing 7th position in the Chessveda Tournament 2025.`,
+    image: '/Photos/nabhya-kumar-singh-chessveda.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Sandarsh Pandey secured 2nd position in Ghaziabad District Chess Tournament',
+    description: `${academyName} congratulates Sandarsh Pandey for securing 2nd position in the Ghaziabad District Chess Tournament.`,
+    image: '/Photos/sandarsh-pandey-ghaziabad-district.webp',
+    rank: 'District',
+    tag: 'District',
+  },
+  {
+    title: 'Sandarsh Pandey secured 6th rank in UP State U-13',
+    description: `${academyName} congratulates Sandarsh Pandey for securing 6th rank in the UP State U-13 chess category.`,
+    image: '/Photos/sandarsh-pandey-up-state-u13.webp',
+    rank: 'State',
+    tag: 'State',
+  },
+  {
+    title: 'Shivansh Tyagi secured 2nd position in District Chess Tournament U-17',
+    description: `${academyName} congratulates Shivansh Tyagi for securing 2nd position in the District Chess Tournament U-17 category.`,
+    image: '/Photos/shivansh-tyagi-district-u17.webp',
+    rank: 'District',
+    tag: 'District',
+  },
+  {
+    title: 'Shivansh Tyagi secured 2nd position at Radha Govind Public School Chess Tournament',
+    description: `${academyName} congratulates Shivansh Tyagi for securing 2nd position in the U-17 category at Radha Govind Public School Chess Tournament.`,
+    image: '/Photos/shivansh-tyagi-radha-govind-u17.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Vivaan delivered a strong performance at Noida Talent Hunt',
+    description: `${academyName} celebrates Vivaan for an impressive performance at the Noida Talent Hunt chess event.`,
+    image: '/Photos/vivaan-noida-talent-hunt.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+];
+
 const gallery = [
+  ...studentAchievements.map(({ title, tag, rank, image }) => ({
+    title,
+    tag,
+    rank,
+    image,
+    isStudentResult: true,
+  })),
   { title: 'National Rank', tag: 'National', rank: 'National', image: '/Photos/kavish-saxena-under9-national.webp' },
   { title: 'Amateur Championship', tag: 'National', rank: 'National', image: '/Photos/kavish-saxena-national-amateur.webp' },
   { title: 'UP State U-11', tag: 'State', rank: 'State', image: '/Photos/vivaan-varoon-up-state-u11.webp' },
@@ -237,57 +426,64 @@ const gallery = [
 const rankOrder = { National: 0, State: 1, District: 2, Other: 3 };
 
 const achievements = [
+  ...studentAchievements.map(({ title, description, image, rank }) => ({
+    title,
+    description,
+    image,
+    rank,
+    isStudentResult: true,
+  })),
   {
     title: 'Kavish Saxena won 1st runner up position in 13th National Amateur Chess Championship 2026',
-    description: 'Rituraj Chess Academy proudly congratulates Kavish on his big achievement for becoming a National Rank Holder in the B-1700 Open category.',
+    description: `${academyName} proudly congratulates Kavish on his big achievement for becoming a National Rank Holder in the B-1700 Open category.`,
     image: '/Photos/kavish-saxena-national-amateur.webp',
     rank: 'National',
   },
   {
     title: 'Kavish Saxena secured 20th position in Under 9 National Chess Championship 2025',
-    description: 'Rituraj Chess Academy proudly congratulates Kavish on winning this position and increasing 121+ fide rating.',
+    description: `${academyName} proudly congratulates Kavish on winning this position and increasing 121+ fide rating.`,
     image: '/Photos/kavish-saxena-under9-national.webp',
     rank: 'National',
   },
   {
     title: 'Vivaan Varoon Secured 4th Place at UP State Chess Championship',
-    description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 4th Position in the Under-11 category at the Uttar Pradesh State Chess Championship.',
+    description: `${academyName} proudly congratulates Vivaan Varoon on securing 4th Position in the Under-11 category at the Uttar Pradesh State Chess Championship.`,
     image: '/Photos/vivaan-varoon-up-state-u11.webp',
     rank: 'State',
   },
   {
     title: 'Vivaan Varoon Secured 3rd Place at UP State Chess Championship',
-    description: 'Rituraj Chess Academy proudly congratulates Vivaan Varoon on securing 3rd Position in the Under-13 category at the Uttar Pradesh State Chess Championship.',
+    description: `${academyName} proudly congratulates Vivaan Varoon on securing 3rd Position in the Under-13 category at the Uttar Pradesh State Chess Championship.`,
     image: '/Photos/vivaan-varoon-up-state-u13.webp',
     rank: 'State',
   },
   {
     title: 'Aadwan Gupta Secured 1st position in G B Nagar District Chess Championship 2026',
-    description: 'Rituraj Chess Academy proudly congratulates Aadwan for this remarkable victory in u-13 category.',
+    description: `${academyName} proudly congratulates Aadwan for this remarkable victory in u-13 category.`,
     image: '/Photos/aadwan-gupta-gb-nagar.webp',
     rank: 'District',
   },
   {
     title: 'Ghaziabad District Chess Championship 2024 Winners & UP State Qualifiers',
-    description: 'Kavish Saxena secured 3rd position, Reyansh Malik secured 4th position, Yuvaan Agarwal secured 5th position, Veidika Sapra secured 3rd position, and Arna Mall secured 4th position. Rituraj Chess Academy proudly congratulates all students for getting selected for UP State Chess Championship 2024.',
+    description: `Kavish Saxena secured 3rd position, Reyansh Malik secured 4th position, Yuvaan Agarwal secured 5th position, Veidika Sapra secured 3rd position, and Arna Mall secured 4th position. ${academyName} proudly congratulates all students for getting selected for UP State Chess Championship 2024.`,
     image: '/Photos/ghaziabad-district-winners-2024.webp',
     rank: 'District',
   },
   {
     title: 'Vivaan Secured 1st & 2nd position at Ghaziabad District Championship',
-    description: 'Rituraj Chess Academy proudly congratulates Vivaan on securing 1st position in the Under-13 category & 2nd position in Under 11 category in Ghaziabad District Chess Championship.',
+    description: `${academyName} proudly congratulates Vivaan on securing 1st position in the Under-13 category & 2nd position in Under 11 category in Ghaziabad District Chess Championship.`,
     image: '/Photos/vivaan-ghaziabad-district.webp',
     rank: 'District',
   },
   {
     title: 'Vritti Jain Secured 1st Place at Ghaziabad District championship',
-    description: 'Rituraj Chess Academy proudly congratulates Vritti Jain on securing 1st Position in the Under-17 category at the Ghaziabad District chess championship.',
+    description: `${academyName} proudly congratulates Vritti Jain on securing 1st Position in the Under-17 category at the Ghaziabad District chess championship.`,
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
     rank: 'District',
   },
   {
     title: 'Veidika Sapra secured 1st runner up position in 1st Grand Slam Tournament',
-    description: 'Rituraj Chess Academy proudly congratulates Veidika Sapra on securing this prestigious win.',
+    description: `${academyName} proudly congratulates Veidika Sapra on securing this prestigious win.`,
     image: '/Photos/veidika-sapra-grand-slam.webp',
     rank: 'Other',
   },
@@ -318,6 +514,12 @@ const risingStars = [
     rank: 'District',
     description: '1st Place — Ghaziabad District Championship (U-17)',
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
+  },
+  {
+    name: 'Divyam Pandey',
+    rank: 'Tournament',
+    description: '4th Position — Brainwaves Chess Tournament, Hapur',
+    image: '/Photos/divyam-pandey-brainwaves-hapur.webp',
   },
   {
     name: 'Veidika Sapra',
@@ -378,6 +580,21 @@ function App() {
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {
       ogDescription.setAttribute('content', meta.description);
+    }
+
+    const keywords = document.querySelector('meta[name="keywords"]');
+    if (keywords) {
+      keywords.setAttribute('content', meta.keywords || seoKeywords.join(', '));
+    }
+
+    const author = document.querySelector('meta[name="author"]');
+    if (author) {
+      author.setAttribute('content', academyName);
+    }
+
+    const ogSiteName = document.querySelector('meta[property="og:site_name"]');
+    if (ogSiteName) {
+      ogSiteName.setAttribute('content', academyName);
     }
     
     // Scroll to top on page change
@@ -484,10 +701,10 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
     <header className="site-header">
       <Link className="brand" to="/">
         <span className="brand-mark">
-          <img src="/logo.png" alt="Rituraj Chess Academy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <img src="/logo.png" alt={academyName} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </span>
         <span>
-          <strong>Rituraj Chess Academy</strong>
+          <strong>{academyName}</strong>
           <small>Where Champions Are Made</small>
         </span>
       </Link>
@@ -552,7 +769,7 @@ function Hero({ goTo }) {
             Premium chess coaching in Ghaziabad
           </span>
           <h1>
-            RITURAJ<br />CHESS ACADEMY
+            RITURAJ<br />ACADEMY
             <span className="hero-subtitle">Where Champions Are Made</span>
           </h1>
           <p>
@@ -719,9 +936,12 @@ function AboutCoachAchievements({ goTo }) {
             </div>
             <span className="coach-name">{activeCoach.name}</span>
             <span style={{ display: 'block', color: 'var(--gold-light)', fontSize: '1rem', marginBottom: '16px', fontStyle: 'italic', fontFamily: 'var(--heading-font)' }}>{activeCoach.role}</span>
+            {activeCoach.experience && (
+              <span className="coach-experience-badge">{activeCoach.experience}</span>
+            )}
             <ul>
               <li><CheckCircle2 size={16} /> {activeCoach.details}</li>
-              {activeCoach.stats.slice(0, 3).map((stat, idx) => (
+              {activeCoach.stats.slice(0, 4).map((stat, idx) => (
                 <li key={idx}><CheckCircle2 size={16} /> {stat}</li>
               ))}
             </ul>
@@ -817,8 +1037,8 @@ function GalleryStrip({ goTo }) {
         <div className="gallery-scroll-container">
           <div className="gallery-scroll-track">
             {gallery.slice(0, 10).map((item, idx) => (
-              <div className="gallery-strip-card" key={idx}>
-                <img src={item.image} alt={item.title} loading="lazy" />
+              <div className={`gallery-strip-card ${item.isStudentResult ? 'student-result-card' : ''}`} key={idx}>
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                 <span>{item.title}</span>
               </div>
             ))}
@@ -1050,9 +1270,9 @@ function AboutPage({ goTo }) {
           data={achievements}
           gridClassName="achievement-grid"
           renderItem={(item, idx) => (
-            <article className="achievement-card" key={idx}>
+            <article className={`achievement-card ${item.isStudentResult ? 'student-result-card' : ''}`} key={idx}>
               <div className="achievement-image-wrap">
-                <img loading="lazy" src={item.image} alt={item.title} />
+                <img loading="lazy" decoding="async" src={item.image} alt={item.title} />
                 <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
               </div>
               <div className="achievement-content">
@@ -1100,9 +1320,9 @@ function AchievementsPage() {
           data={achievements}
           gridClassName="achievement-grid"
           renderItem={(item, idx) => (
-            <article className="achievement-card" key={idx}>
+            <article className={`achievement-card ${item.isStudentResult ? 'student-result-card' : ''}`} key={idx}>
               <div className="achievement-image-wrap">
-                <img loading="lazy" src={item.image} alt={item.title} />
+                <img loading="lazy" decoding="async" src={item.image} alt={item.title} />
                 <span className={`rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
               </div>
               <div className="achievement-content">
@@ -1132,7 +1352,7 @@ function PageIntro({ icon: Icon, title, text, bgImage, image, children }) {
         <div>
           <span className="eyebrow">
             <Icon size={16} />
-            Rituraj Chess Academy
+            {academyName}
           </span>
           <h1>{title}</h1>
           <p>{text}</p>
@@ -1280,6 +1500,9 @@ function TrainersPage() {
             <div className="trainer-card-content">
               <span>{trainer.role}</span>
               <h2>{trainer.name}</h2>
+              {trainer.experience && (
+                <div className="trainer-experience-badge">{trainer.experience}</div>
+              )}
               <p>{trainer.details}</p>
               <ul>
                 {trainer.stats.map((stat) => (
@@ -1308,8 +1531,8 @@ function GalleryPage() {
           data={gallery}
           gridClassName="gallery-grid"
           renderItem={(item) => (
-            <article className="gallery-card" key={item.title}>
-              <img loading="lazy" src={item.image} alt={item.title} />
+            <article className={`gallery-card ${item.isStudentResult ? 'student-result-card' : ''}`} key={item.title}>
+              <img loading="lazy" decoding="async" src={item.image} alt={item.title} />
               {item.rank && (
                 <span className={`rank-badge gallery-rank-badge rank-${item.rank.toLowerCase()}`}>{item.rank}</span>
               )}
@@ -1375,9 +1598,6 @@ function TestimonialCard({ item }) {
 
 function FeedbackPage() {
   const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
     rating: '5',
     category: 'Coaching Quality',
     message: '',
@@ -1416,9 +1636,6 @@ function FeedbackPage() {
 
       setStatus({ type: 'success', message: data.message });
       setFormState({
-        name: '',
-        email: '',
-        phone: '',
         rating: '5',
         category: 'Coaching Quality',
         message: '',
@@ -1467,18 +1684,6 @@ function FeedbackPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="inquiry-form">
-          <label>
-            Full Name *
-            <input type="text" required value={formState.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Your name" disabled={submitting} />
-          </label>
-          <label>
-            Email Address *
-            <input type="email" required value={formState.email} onChange={(e) => updateField('email', e.target.value)} placeholder="you@example.com" disabled={submitting} />
-          </label>
-          <label>
-            Phone Number (Optional)
-            <input type="tel" value={formState.phone} onChange={(e) => updateField('phone', e.target.value)} placeholder="+91" disabled={submitting} />
-          </label>
           <label>
             Feedback Category *
             <select value={formState.category} onChange={(e) => updateField('category', e.target.value)} disabled={submitting}>
@@ -1561,7 +1766,7 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
             Chat on WhatsApp
           </a>
           <iframe
-            title="Rituraj Chess Academy location"
+            title={`${academyName} location`}
             loading="lazy"
             src="https://www.google.com/maps?q=Rajnagar%20Extension%20Ghaziabad&output=embed"
           />
@@ -1640,10 +1845,10 @@ function Footer() {
         <div>
           <Link className="brand footer-brand" to="/">
             <span className="brand-mark">
-              <img src="/logo.png" alt="Rituraj Chess Academy Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src="/logo.png" alt={`${academyName} Logo`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </span>
             <span>
-              <strong>Rituraj Chess Academy</strong>
+              <strong>{academyName}</strong>
               <small>Where Champions Are Made</small>
             </span>
           </Link>
@@ -1668,7 +1873,7 @@ function Footer() {
           <h2>Contact Us</h2>
           <a href="tel:+918076940504">+91 8076 940 504</a>
           <a href="mailto:riturajchessacademy@gmail.com">riturajchessacademy@gmail.com</a>
-          <span>Rituraj Chess Academy, Ghaziabad, Uttar Pradesh, India</span>
+          <span>{academyName}, Ghaziabad, Uttar Pradesh, India</span>
           <a
             className="whatsapp-link"
             href="https://wa.me/918076940504"
@@ -1688,7 +1893,7 @@ function Footer() {
         </div>
       </div>
       <div className="section-wrap footer-bottom">
-        <span>© 2026 Rituraj Chess Academy. All Rights Reserved.</span>
+        <span>© 2026 {academyName}. All Rights Reserved.</span>
         <span className="designed-with">
           Designed with ❤ for Future Champions
         </span>
@@ -1758,7 +1963,7 @@ function WelcomePopup() {
           </div>
         </div>
         <div className="popup-actions">
-          <h3>Welcome to Rituraj Chess Academy!</h3>
+          <h3>Welcome to {academyName}!</h3>
           <p>Ready to master the board? Let's talk!</p>
           <a
             className="primary-button popup-btn"
@@ -1785,7 +1990,7 @@ function TermsPage() {
       <div className="split-section" style={{ display: 'block' }}>
         <div className="split-copy" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '0 20px' }}>
           <h2>1. Introduction</h2>
-          <p>Welcome to Rituraj Chess Academy. By accessing our website or enrolling in our courses, you agree to be bound by these Terms and Conditions. Please review them carefully.</p>
+          <p>Welcome to {academyName}. By accessing our website or enrolling in our courses, you agree to be bound by these Terms and Conditions. Please review them carefully.</p>
           
           <h2 style={{ marginTop: '30px' }}>2. Enrollment and Fees</h2>
           <p>All program fees must be paid in advance. Your enrollment is only confirmed upon successful receipt of the payment. We reserve the right to modify our fees at any time, but changes will not affect already paid ongoing sessions.</p>
@@ -1794,10 +1999,10 @@ function TermsPage() {
           <p>Students must maintain discipline, respect their trainers and peers, and demonstrate good sportsmanship at all times. The academy reserves the right to terminate enrollment for any student exhibiting disruptive or disrespectful behavior.</p>
           
           <h2 style={{ marginTop: '30px' }}>4. Intellectual Property</h2>
-          <p>All training materials, including puzzles, videos, study guides, and literature provided by the academy, remain the intellectual property of Rituraj Chess Academy and cannot be redistributed, sold, or shared publicly without express permission.</p>
+          <p>All training materials, including puzzles, videos, study guides, and literature provided by the academy, remain the intellectual property of {academyName} and cannot be redistributed, sold, or shared publicly without express permission.</p>
           
           <h2 style={{ marginTop: '30px' }}>5. Limitation of Liability</h2>
-          <p>Rituraj Chess Academy is not liable for any direct, indirect, incidental, or consequential damages resulting from the use of our services, or any tournament results. Chess is a competitive sport and results are dependent on the individual effort of the student.</p>
+          <p>{academyName} is not liable for any direct, indirect, incidental, or consequential damages resulting from the use of our services, or any tournament results. Chess is a competitive sport and results are dependent on the individual effort of the student.</p>
         </div>
       </div>
     </div>
@@ -1852,7 +2057,7 @@ function RefundPage() {
           <p>No refunds will be provided for mid-course cancellations or for classes missed by the student. In special circumstances (such as medical emergencies), we may offer class credits for future use at the discretion of the academy director.</p>
           
           <h2 style={{ marginTop: '30px' }}>4. Academy Cancellations</h2>
-          <p>If Rituraj Chess Academy must cancel a class due to trainer illness or emergency, a make-up class will be scheduled. If a make-up class cannot be scheduled, a proportional credit will be applied to the next billing cycle.</p>
+          <p>If {academyName} must cancel a class due to trainer illness or emergency, a make-up class will be scheduled. If a make-up class cannot be scheduled, a proportional credit will be applied to the next billing cycle.</p>
         </div>
       </div>
     </div>

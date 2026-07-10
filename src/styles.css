@@ -869,6 +869,21 @@ img {
   object-position: center;
 }
 
+.coach-experience-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: -4px 0 14px;
+  padding: 7px 12px;
+  color: #14110a;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 /* ===== TOURNAMENT SECTION ===== */
 .tournament-section {
   padding: 80px 0;
@@ -1029,6 +1044,12 @@ img {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+}
+
+.gallery-strip-card.student-result-card img {
+  object-fit: contain;
+  padding: 8px;
+  background: linear-gradient(135deg, #090d14, #141b2a);
 }
 
 .gallery-strip-card:hover img {
@@ -1508,6 +1529,18 @@ img {
   transform: scale(1.05);
 }
 
+.achievement-card.student-result-card .achievement-image-wrap {
+  aspect-ratio: 1 / 1;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+    #0a0e16;
+}
+
+.achievement-card.student-result-card .achievement-image-wrap img {
+  object-fit: contain;
+  padding: 10px;
+}
+
 .achievement-content {
   padding: 24px;
 }
@@ -1630,6 +1663,18 @@ img {
   min-height: 330px;
   object-fit: cover;
   transition: transform 0.45s ease;
+}
+
+.gallery-card.student-result-card {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+    #0a0e16;
+}
+
+.gallery-card.student-result-card img {
+  object-fit: contain;
+  padding: 12px;
+  background: transparent;
 }
 
 .gallery-card:hover img {
@@ -1842,6 +1887,19 @@ img {
   color: #fff;
   line-height: 1.1;
   letter-spacing: -0.01em;
+}
+
+.trainer-experience-badge {
+  width: fit-content;
+  margin: -4px 0 14px;
+  padding: 8px 13px;
+  color: #14110a;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .trainer-card p {

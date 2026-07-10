@@ -41,7 +41,7 @@ function validateInquiry(body) {
   return { inquiry };
 }
 
-const feedbackRequired = ['name', 'email', 'rating', 'category', 'message'];
+const feedbackRequired = ['rating', 'category', 'message'];
 
 function validateFeedback(body) {
   const feedback = Object.fromEntries(
@@ -53,16 +53,17 @@ function validateFeedback(body) {
     return { error: `Missing required fields: ${missing.join(', ')}` };
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(feedback.email)) {
+  feedback.name = clean(body.name) || 'Anonymous visitor';
+  feedback.email = clean(body.email);
+  feedback.phone = clean(body.phone);
+
+  if (feedback.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(feedback.email)) {
     return { error: 'Please enter a valid email address.' };
   }
 
   if (feedback.message.length < 10) {
     return { error: 'Please include a more detailed message.' };
   }
-
-  // phone is optional
-  feedback.phone = clean(body.phone);
 
   return { feedback };
 }
@@ -139,7 +140,7 @@ app.post('/api/contact', async (req, res) => {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #fdf5e6; border: 1px solid #e2d1b3; border-radius: 8px; overflow: hidden; color: #333;">
           <div style="background-color: #101624; padding: 24px; text-align: center; border-bottom: 4px solid #d4af37;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ CHESS ACADEMY</h1>
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ ACADEMY</h1>
             <p style="color: #d4af37; margin: 5px 0 0 0; font-size: 14px; text-transform: uppercase;">New Admission Inquiry</p>
           </div>
           <div style="padding: 32px 24px; background-color: #ffffff;">
@@ -170,7 +171,7 @@ app.post('/api/contact', async (req, res) => {
             </div>
           </div>
           <div style="background-color: #fdf5e6; padding: 16px; text-align: center; font-size: 12px; color: #888;">
-            This email was generated automatically from the Rituraj Chess Academy website contact form.
+            This email was generated automatically from the Rituraj Academy website contact form.
           </div>
         </div>
       `,
@@ -180,20 +181,20 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: email,
-      subject: `We have received your inquiry - Rituraj Chess Academy`,
+      subject: `We have received your inquiry - Rituraj Academy`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #fdf5e6; border: 1px solid #e2d1b3; border-radius: 8px; overflow: hidden; color: #333;">
           <div style="background-color: #101624; padding: 24px; text-align: center; border-bottom: 4px solid #d4af37;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ CHESS ACADEMY</h1>
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ ACADEMY</h1>
           </div>
           <div style="padding: 32px 24px; background-color: #ffffff;">
             <h2 style="margin-top: 0; color: #101624; font-size: 20px;">Hello ${htmlInquiry.name},</h2>
-            <p style="color: #444; line-height: 1.6;">Thank you for your interest in Rituraj Chess Academy. We have successfully received your inquiry regarding the <strong>${htmlInquiry.program}</strong>.</p>
+            <p style="color: #444; line-height: 1.6;">Thank you for your interest in Rituraj Academy. We have successfully received your inquiry regarding the <strong>${htmlInquiry.program}</strong>.</p>
             <p style="color: #444; line-height: 1.6;">Our head coach or a member of our team will review your message and contact you shortly at <strong>${htmlInquiry.phone}</strong> or via this email address.</p>
             
             <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #eee;">
               <p style="margin: 0; color: #666; font-size: 14px;">Best Regards,</p>
-              <p style="margin: 5px 0 0 0; color: #101624; font-weight: bold;">The Rituraj Chess Academy Team</p>
+              <p style="margin: 5px 0 0 0; color: #101624; font-weight: bold;">The Rituraj Academy Team</p>
               <p style="margin: 5px 0 0 0; color: #666; font-size: 13px;">📞 +91 8076 940 504 &nbsp;|&nbsp; ✉️ riturajchessacademy@gmail.com</p>
               <p style="margin: 5px 0 0 0; color: #c99318; font-size: 14px;"><a href="https://riturajacademy.com" style="color: #c99318; text-decoration: none;">www.riturajacademy.com</a></p>
             </div>
@@ -235,17 +236,21 @@ app.post('/api/feedback', async (req, res) => {
     category: escapeHtml(category),
     message: escapeHtml(message).replace(/\n/g, '<br />'),
   };
+  const emailCell = email
+    ? `<a href="mailto:${htmlFeedback.email}" style="color: #c99318; text-decoration: none;">${htmlFeedback.email}</a>`
+    : 'Not provided';
+  const subjectName = name === 'Anonymous visitor' ? 'anonymous visitor' : name;
 
   try {
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: process.env.INQUIRY_TO,
-      replyTo: email,
-      subject: `New academy feedback from ${name} (${rating} Stars)`,
+      replyTo: email || undefined,
+      subject: `New academy feedback from ${subjectName} (${rating} Stars)`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #fdf5e6; border: 1px solid #e2d1b3; border-radius: 8px; overflow: hidden; color: #333;">
           <div style="background-color: #101624; padding: 24px; text-align: center; border-bottom: 4px solid #d4af37;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ CHESS ACADEMY</h1>
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ ACADEMY</h1>
             <p style="color: #d4af37; margin: 5px 0 0 0; font-size: 14px; text-transform: uppercase;">New Feedback Received</p>
           </div>
           <div style="padding: 32px 24px; background-color: #ffffff;">
@@ -258,7 +263,7 @@ app.post('/api/feedback', async (req, res) => {
               </tr>
               <tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #f5f5f5; color: #666; font-weight: bold;">Email:</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #f5f5f5; color: #111;"><a href="mailto:${htmlFeedback.email}" style="color: #c99318; text-decoration: none;">${htmlFeedback.email}</a></td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f5f5f5; color: #111;">${emailCell}</td>
               </tr>
               <tr>
                 <td style="padding: 10px 0; border-bottom: 1px solid #f5f5f5; color: #666; font-weight: bold;">Phone:</td>
@@ -280,20 +285,21 @@ app.post('/api/feedback', async (req, res) => {
             </div>
           </div>
           <div style="background-color: #fdf5e6; padding: 16px; text-align: center; font-size: 12px; color: #888;">
-            This email was generated automatically from the Rituraj Chess Academy feedback form.
+            This email was generated automatically from the Rituraj Academy feedback form.
           </div>
         </div>
       `,
     });
 
-    await transporter.sendMail({
+    if (email) {
+      await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: email,
-      subject: `Thank you for your feedback - Rituraj Chess Academy`,
+      subject: `Thank you for your feedback - Rituraj Academy`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #fdf5e6; border: 1px solid #e2d1b3; border-radius: 8px; overflow: hidden; color: #333;">
           <div style="background-color: #101624; padding: 24px; text-align: center; border-bottom: 4px solid #d4af37;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ CHESS ACADEMY</h1>
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">RITURAJ ACADEMY</h1>
           </div>
           <div style="padding: 32px 24px; background-color: #ffffff;">
             <h2 style="margin-top: 0; color: #101624; font-size: 20px;">Hello ${htmlFeedback.name},</h2>
@@ -302,14 +308,15 @@ app.post('/api/feedback', async (req, res) => {
             
             <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #eee;">
               <p style="margin: 0; color: #666; font-size: 14px;">Best Regards,</p>
-              <p style="margin: 5px 0 0 0; color: #101624; font-weight: bold;">The Rituraj Chess Academy Team</p>
+              <p style="margin: 5px 0 0 0; color: #101624; font-weight: bold;">The Rituraj Academy Team</p>
               <p style="margin: 5px 0 0 0; color: #666; font-size: 13px;">📞 +91 8076 940 504 &nbsp;|&nbsp; ✉️ riturajchessacademy@gmail.com</p>
               <p style="margin: 5px 0 0 0; color: #c99318; font-size: 14px;"><a href="https://riturajacademy.com" style="color: #c99318; text-decoration: none;">www.riturajacademy.com</a></p>
             </div>
           </div>
         </div>
       `,
-    });
+      });
+    }
 
     return res.json({ message: 'Thank you. Your feedback has been submitted.' });
   } catch (error) {
@@ -326,5 +333,5 @@ app.get(/.*/, (_req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Rituraj Chess Academy server running at http://localhost:${port}`);
+  console.log(`Rituraj Academy server running at http://localhost:${port}`);
 });

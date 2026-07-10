@@ -1,6 +1,6 @@
-# Rituraj Chess Academy
+# Rituraj Academy
 
-Vite + React website for Rituraj Chess Academy with a Node/Nodemailer contact form endpoint.
+Vite + React website for Rituraj Academy with a Node/Nodemailer contact form endpoint.
 
 ## Run Locally
 
@@ -37,7 +37,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=
 SMTP_PASS=
-SMTP_FROM="Rituraj Chess Academy <no-reply@riturajacademy.com>"
+SMTP_FROM="Rituraj Academy <no-reply@riturajacademy.com>"
 INQUIRY_TO=support@nextgenix.in
 ```
 
