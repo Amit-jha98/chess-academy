@@ -265,6 +265,13 @@ const testimonials = [
 
 const studentAchievements = [
   {
+    title: 'Vanij Jain became Champion in Under 12 Category at St. Teresa Chess Tournament',
+    description: `${academyName} congratulates Vanij Jain for securing 1st Prize in the Under 12 Category at the St. Teresa Chess Tournament.`,
+    image: '/Photos/vanij-champion.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
     title: 'Student secured 1st position in U-11 category at HLM Chess Tournament',
     description: `${academyName} proudly congratulates our student for securing 1st position in the U-11 category at the HLM Chess Tournament.`,
     image: '/Photos/hlm-u11-first-position.webp',
@@ -546,6 +553,12 @@ const risingStars = [
     image: '/Photos/shivansh-tyagi-district-u17.webp',
   },
   {
+    name: 'Vanij Jain',
+    rank: 'Tournament',
+    description: 'Champion — Under 12 Category, St. Teresa Chess Tournament',
+    image: '/Photos/vanij-champion.webp',
+  },
+  {
     name: 'Divyam Pandey',
     rank: 'Tournament',
     description: '4th Position — Brainwaves Chess Tournament, Hapur',
@@ -718,6 +731,7 @@ function App() {
   return (
     <div className="site-shell">
       <WelcomePopup />
+      <AchievementPopup activePage={activePage} />
       <Header
         activePage={activePage}
         activeLabel={activeLabel}
@@ -2042,6 +2056,67 @@ function WelcomePopup() {
             Chat with us on WhatsApp
           </a>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function AchievementPopup({ activePage }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasShown, setHasShown] = useState({});
+
+  useEffect(() => {
+    if (['home', 'about', 'achievements'].includes(activePage) && !hasShown[activePage]) {
+      const delay = activePage === 'home' ? 10000 : 1500;
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+        setHasShown(prev => ({ ...prev, [activePage]: true }));
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [activePage, hasShown]);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="popup-overlay" style={{ zIndex: 1001, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsVisible(false)}>
+      <div className="popup-content hide-scrollbar" style={{ maxWidth: '450px', maxHeight: '90vh', overflowY: 'auto', textAlign: 'center', padding: '30px 20px', background: 'var(--card-bg)', position: 'relative' }} onClick={(e) => e.stopPropagation()}>
+        <button className="popup-close" style={{ position: 'absolute', top: '15px', right: '15px', zIndex: 100, background: 'rgba(0,0,0,0.6)', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsVisible(false)} type="button" aria-label="Close popup">
+          <X size={18} color="#fff" />
+        </button>
+        
+        {/* Raining Graffiti / Confetti decoration */}
+        <div style={{ position: 'absolute', left: '10%', fontSize: '30px', animation: 'confettiRain 4s linear infinite', pointerEvents: 'none' }}>🎉</div>
+        <div style={{ position: 'absolute', left: '30%', fontSize: '25px', animation: 'confettiRain 5s linear infinite 1s', pointerEvents: 'none' }}>🎊</div>
+        <div style={{ position: 'absolute', left: '50%', fontSize: '35px', animation: 'confettiRain 4.5s linear infinite 2s', pointerEvents: 'none' }}>🏆</div>
+        <div style={{ position: 'absolute', left: '70%', fontSize: '30px', animation: 'confettiRain 3.5s linear infinite 0.5s', pointerEvents: 'none' }}>✨</div>
+        <div style={{ position: 'absolute', left: '90%', fontSize: '25px', animation: 'confettiRain 4.2s linear infinite 1.5s', pointerEvents: 'none' }}>🎉</div>
+        
+        <h2 style={{ color: 'var(--gold)', marginBottom: '15px', fontSize: '2rem', fontFamily: 'var(--heading-font)', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '10px' }}>
+          Heartiest<br/>Congratulations!
+        </h2>
+        
+        <img src="/Photos/vanij-champion.webp" alt="Vanij Champion" style={{ display: 'block', margin: '0 auto 20px', width: 'auto', maxWidth: '100%', maxHeight: '45vh', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.4)', border: '2px solid var(--gold)' }} />
+        
+        <h3 style={{ fontSize: '1.8rem', marginBottom: '8px', color: '#fff' }}>VANIJ JAIN</h3>
+        <p style={{ color: 'var(--gold-light)', marginBottom: '15px', fontSize: '1.1rem', lineHeight: '1.4' }}>
+          On becoming the <strong>CHAMPION</strong> in <strong>UNDER 12 CATEGORY</strong><br/>
+          at the ST. TERESA CHESS TOURNAMENT!
+        </p>
+        <p style={{ fontSize: '0.95rem', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '25px', padding: '0 10px' }}>
+          "Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!"
+        </p>
+        
+        <a
+          className="primary-button"
+          href="https://wa.me/918076940504?text=Heartiest%20Congratulations%20Vanij%20for%20becoming%20the%20Champion%20in%20Under%2012%20Category%20at%20St.%20Teresa%20Chess%20Tournament!"
+          target="_blank"
+          rel="noreferrer"
+          style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
+        >
+          <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '10px', objectFit: 'contain' }} />
+          Congratulate on WhatsApp
+        </a>
       </div>
     </div>
   );
