@@ -498,10 +498,22 @@ const risingStars = [
     image: '/Photos/kavish-saxena-national-amateur.webp',
   },
   {
+    name: 'Kavish Saxena',
+    rank: 'National',
+    description: '20th Position — Under 9 National Chess Championship 2025',
+    image: '/Photos/kavish-saxena-under9-national.webp',
+  },
+  {
     name: 'Vivaan Varoon',
     rank: 'State',
     description: 'UP State Championship — 3rd (U-13) & 4th (U-11) Place',
     image: '/Photos/vivaan-varoon-up-state-u11.webp',
+  },
+  {
+    name: 'Sandarsh Pandey',
+    rank: 'State',
+    description: '6th Rank - UP State U-13 Chess Category',
+    image: '/Photos/sandarsh-pandey-up-state-u13.webp',
   },
   {
     name: 'Aadwan Gupta',
@@ -516,22 +528,28 @@ const risingStars = [
     image: '/Photos/vritti-jain-ghaziabad-district.webp',
   },
   {
-    name: 'Divyam Pandey',
-    rank: 'Tournament',
-    description: '4th Position — Brainwaves Chess Tournament, Hapur',
-    image: '/Photos/divyam-pandey-brainwaves-hapur.webp',
-  },
-  {
-    name: 'HLM U-11 Winner',
-    rank: 'Tournament',
-    description: '1st Position - HLM Chess Tournament (U-11)',
-    image: '/Photos/hlm-u11-first-position.webp',
-  },
-  {
     name: 'Abhyudya Sharma',
     rank: 'District',
     description: 'U-12 Champion - Krishna Public School Chess Tournament',
     image: '/Photos/abhyudya-sharma-krishna-public-u12-champion.webp',
+  },
+  {
+    name: 'Bhavya',
+    rank: 'District',
+    description: 'Runner Up - Chess Mahayudh U-16 and District U-17',
+    image: '/Photos/bhavya-chess-mahayudh-district-runner-up.webp',
+  },
+  {
+    name: 'Shivansh Tyagi',
+    rank: 'District',
+    description: '2nd Position - District Chess Tournament U-17',
+    image: '/Photos/shivansh-tyagi-district-u17.webp',
+  },
+  {
+    name: 'Divyam Pandey',
+    rank: 'Tournament',
+    description: '4th Position — Brainwaves Chess Tournament, Hapur',
+    image: '/Photos/divyam-pandey-brainwaves-hapur.webp',
   },
   {
     name: 'Akshat Shrivastava',
@@ -552,12 +570,6 @@ const risingStars = [
     image: '/Photos/ayaan-vidhaan-interschool-champion.webp',
   },
   {
-    name: 'Bhavya',
-    rank: 'District',
-    description: 'Runner Up - Chess Mahayudh U-16 and District U-17',
-    image: '/Photos/bhavya-chess-mahayudh-district-runner-up.webp',
-  },
-  {
     name: 'Dhwanika',
     rank: 'Tournament',
     description: 'Strong Performance - Noida Talent Hunt Chess Event',
@@ -568,18 +580,7 @@ const risingStars = [
     rank: 'Tournament',
     description: '7th Position - Chessveda Tournament 2025',
     image: '/Photos/nabhya-kumar-singh-chessveda.webp',
-  },
-  {
-    name: 'Sandarsh Pandey',
-    rank: 'State',
-    description: '6th Rank - UP State U-13 Chess Category',
-    image: '/Photos/sandarsh-pandey-up-state-u13.webp',
-  },
-  {
-    name: 'Shivansh Tyagi',
-    rank: 'District',
-    description: '2nd Position - District Chess Tournament U-17',
-    image: '/Photos/shivansh-tyagi-district-u17.webp',
+    imagePosition: 'center 82%',
   },
   {
     name: 'Veidika Sapra',
@@ -879,7 +880,13 @@ function RisingStarsSection({ goTo }) {
         <div className="stars-grid">
           {risingStars.map((star) => (
             <div className="star-card" key={star.name}>
-              <img className="star-card-image" src={star.image} alt={star.name} loading="lazy" />
+              <img
+                className="star-card-image"
+                src={star.image}
+                alt={star.name}
+                loading="lazy"
+                style={star.imagePosition ? { objectPosition: star.imagePosition } : undefined}
+              />
               <h3>{star.name}</h3>
               <div className="star-rank">{star.rank}</div>
               <div className="star-desc">{star.description}</div>
@@ -1011,8 +1018,8 @@ function AboutCoachAchievements({ goTo }) {
           <div className="about-trio-card">
             <h3><Trophy size={20} /> Our Achievements</h3>
             <ul>
+              <li><Trophy size={16} /> National Winners</li>
               <li><Trophy size={16} /> State Champions</li>
-              <li><Trophy size={16} /> National Participants</li>
               <li><Trophy size={16} /> District Winners</li>
               <li><Trophy size={16} /> School Champions</li>
             </ul>
