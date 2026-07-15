@@ -265,6 +265,13 @@ const testimonials = [
 
 const studentAchievements = [
   {
+    title: 'Vivaan secured 1st position in Blitz and 2nd in Rapid U-11 at Bareilly Open Chess Tournament',
+    description: `${academyName} congratulates Vivaan for his outstanding performance at the Bareilly Open Chess Tournament, winning 1st in Blitz and 2nd in Rapid U-11.`,
+    image: '/Photos/Vivaan.png',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
     title: 'Vanij Jain became Champion in Under 12 Category at St. Teresa Chess Tournament',
     description: `${academyName} congratulates Vanij Jain for securing 1st Prize in the Under 12 Category at the St. Teresa Chess Tournament.`,
     image: '/Photos/vanij-champion.webp',
@@ -503,6 +510,12 @@ const risingStars = [
     rank: 'National',
     description: 'National Rank Holder — 1st Runner Up, 13th National Amateur Championship 2026',
     image: '/Photos/kavish-saxena-national-amateur.webp',
+  },
+  {
+    name: 'Vivaan Varoon',
+    rank: 'State', 
+    description: 'Bareilly Open Chess Tournament — 1st (Blitz U-11) & 2nd (Rapid U-11)',
+    image: '/Photos/Vivaan.png',
   },
   {
     name: 'Kavish Saxena',
@@ -2064,6 +2077,24 @@ function WelcomePopup() {
 function AchievementPopup({ activePage }) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState({});
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const popups = [
+    {
+      image: "/Photos/Vivaan.png",
+      name: "VIVAAN",
+      desc1: <>On his Outstanding Performance at<br/><strong>BAREILLY OPEN CHESS TOURNAMENT</strong><br/><strong>1st</strong> in BLITZ U-11 & <strong>2nd</strong> in RAPID U-11!</>,
+      desc2: "\"Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!\"",
+      whatsappText: "Heartiest Congratulations Vivaan for your outstanding performance at Bareilly Open Chess Tournament!",
+    },
+    {
+      image: "/Photos/vanij-champion.webp",
+      name: "VANIJ JAIN",
+      desc1: <>On becoming the <strong>CHAMPION</strong> in <strong>UNDER 12 CATEGORY</strong><br/>at the ST. TERESA CHESS TOURNAMENT!</>,
+      desc2: "\"Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!\"",
+      whatsappText: "Heartiest Congratulations Vanij for becoming the Champion in Under 12 Category at St. Teresa Chess Tournament!",
+    }
+  ];
 
   useEffect(() => {
     if (['home', 'about', 'achievements'].includes(activePage) && !hasShown[activePage]) {
@@ -2075,6 +2106,14 @@ function AchievementPopup({ activePage }) {
       return () => clearTimeout(timer);
     }
   }, [activePage, hasShown]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % popups.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isVisible, popups.length]);
 
   if (!isVisible) return null;
 
@@ -2096,27 +2135,55 @@ function AchievementPopup({ activePage }) {
           Heartiest<br/>Congratulations!
         </h2>
         
-        <img src="/Photos/vanij-champion.webp" alt="Vanij Champion" style={{ display: 'block', margin: '0 auto 20px', width: 'auto', maxWidth: '100%', maxHeight: '45vh', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.4)', border: '2px solid var(--gold)' }} />
-        
-        <h3 style={{ fontSize: '1.8rem', marginBottom: '8px', color: '#fff' }}>VANIJ JAIN</h3>
-        <p style={{ color: 'var(--gold-light)', marginBottom: '15px', fontSize: '1.1rem', lineHeight: '1.4' }}>
-          On becoming the <strong>CHAMPION</strong> in <strong>UNDER 12 CATEGORY</strong><br/>
-          at the ST. TERESA CHESS TOURNAMENT!
-        </p>
-        <p style={{ fontSize: '0.95rem', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '25px', padding: '0 10px' }}>
-          "Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!"
-        </p>
-        
-        <a
-          className="primary-button"
-          href="https://wa.me/918076940504?text=Heartiest%20Congratulations%20Vanij%20for%20becoming%20the%20Champion%20in%20Under%2012%20Category%20at%20St.%20Teresa%20Chess%20Tournament!"
-          target="_blank"
-          rel="noreferrer"
-          style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
-        >
-          <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '10px', objectFit: 'contain' }} />
-          Congratulate on WhatsApp
-        </a>
+        <div style={{ position: 'relative', width: '100%' }}>
+          {popups.map((popup, index) => (
+            <div 
+              key={index} 
+              style={{ 
+                position: index === currentSlide ? 'relative' : 'absolute',
+                top: 0, left: 0, width: '100%',
+                opacity: index === currentSlide ? 1 : 0, 
+                transition: 'opacity 0.5s ease-in-out',
+                pointerEvents: index === currentSlide ? 'auto' : 'none',
+                visibility: index === currentSlide ? 'visible' : 'hidden'
+              }}
+            >
+              <img src={popup.image} alt={`${popup.name} Champion`} style={{ display: 'block', margin: '0 auto 20px', width: 'auto', maxWidth: '100%', maxHeight: '45vh', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.4)', border: '2px solid var(--gold)' }} />
+              
+              <h3 style={{ fontSize: '1.8rem', marginBottom: '8px', color: '#fff' }}>{popup.name}</h3>
+              <p style={{ color: 'var(--gold-light)', marginBottom: '15px', fontSize: '1.1rem', lineHeight: '1.4' }}>
+                {popup.desc1}
+              </p>
+              <p style={{ fontSize: '0.95rem', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '25px', padding: '0 10px' }}>
+                {popup.desc2}
+              </p>
+              
+              <a
+                className="primary-button"
+                href={`https://wa.me/918076940504?text=${encodeURIComponent(popup.whatsappText)}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
+              >
+                <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '10px', objectFit: 'contain' }} />
+                Congratulate on WhatsApp
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="popup-dots" style={{ position: 'relative', bottom: 'auto', marginTop: '15px', display: 'flex', justifyContent: 'center' }}>
+          {popups.map((_, index) => (
+            <button 
+              key={index} 
+              className={`popup-dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              type="button"
+              style={{ margin: '0 4px' }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
