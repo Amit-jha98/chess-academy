@@ -743,6 +743,7 @@ function App() {
 
   return (
     <div className="site-shell">
+      <MahayudhPopup />
       <WelcomePopup />
       <AchievementPopup activePage={activePage} />
       <Header
@@ -1304,11 +1305,29 @@ function AnnouncementMarquee() {
   );
 }
 
+function MahayudhNotification() {
+  return (
+    <section className="tournament-section" style={{ background: 'var(--card-bg)' }}>
+      <div className="section-wrap">
+        <div className="section-heading" style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <span className="section-kicker">UPCOMING MEGA EVENT</span>
+          <h2>3RD MAHAYUDH CHESS CHAMPIONSHIP</h2>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+          <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh Poster 1" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/3rd_mahayudh2.png" alt="3rd Mahayudh Poster 2" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HomePage({ goTo }) {
   return (
     <>
       <AnnouncementMarquee />
       <Hero goTo={goTo} />
+      <MahayudhNotification />
       <RisingStarsSection goTo={goTo} />
       <StatsBar />
       <AboutCoachAchievements goTo={goTo} />
@@ -2184,6 +2203,49 @@ function AchievementPopup({ activePage }) {
             />
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function MahayudhPopup() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Show popup after a short delay
+    const timer = setTimeout(() => setIsVisible(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="popup-overlay" style={{ zIndex: 1002, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsVisible(false)}>
+      <div className="popup-content hide-scrollbar" style={{ maxWidth: '500px', maxHeight: '90vh', overflowY: 'auto', textAlign: 'center', padding: '20px', background: 'var(--card-bg)', position: 'relative' }} onClick={(e) => e.stopPropagation()}>
+        <button className="popup-close" style={{ position: 'absolute', top: '15px', right: '15px', zIndex: 100, background: 'rgba(0,0,0,0.6)', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsVisible(false)} type="button" aria-label="Close popup">
+          <X size={18} color="#fff" />
+        </button>
+        
+        <h2 style={{ color: 'var(--gold)', marginBottom: '15px', fontSize: '1.8rem', fontFamily: 'var(--heading-font)', fontWeight: '900', textTransform: 'uppercase' }}>
+          3rd Mahayudh<br/>Chess Championship
+        </h2>
+        
+        <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh" style={{ display: 'block', margin: '0 auto 20px', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+        
+        <p style={{ color: 'var(--muted)', marginBottom: '20px', fontSize: '1rem' }}>
+          Join the ultimate battle of minds! Register now to secure your spot.
+        </p>
+        
+        <a
+          className="primary-button"
+          href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%203rd%20Mahayudh%20Chess%20Championship"
+          target="_blank"
+          rel="noreferrer"
+          style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
+        >
+          <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '10px', objectFit: 'contain' }} />
+          Participate Now
+        </a>
       </div>
     </div>
   );
