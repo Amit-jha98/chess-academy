@@ -1,5 +1,6 @@
 import {
   Award,
+  Bell,
   BookOpen,
   CalendarDays,
   CheckCircle2,
@@ -811,6 +812,7 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
       </nav>
 
       <div className="header-actions">
+        <NotificationBell />
         <Link className="primary-button header-demo-btn" to="/contact" style={{ minHeight: '40px', fontSize: '0.85rem', padding: '0 16px' }}>
           <span className="hide-on-mobile">Book Free Demo</span> <Trophy size={16} />
         </Link>
@@ -841,6 +843,58 @@ function Header({ activePage, activeLabel, goTo, menuOpen, setMenuOpen }) {
         </div>
       )}
     </header>
+  );
+}
+
+function NotificationBell() {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useMemo(() => null, []);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClick = (e) => {
+      if (!e.target.closest('.notification-wrapper')) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [isOpen]);
+
+  return (
+    <div className="notification-wrapper" style={{ position: 'relative' }}>
+      <button 
+        className="bell-button" 
+        onClick={() => setIsOpen(!isOpen)} 
+        aria-label="Notifications"
+        type="button"
+      >
+        <Bell size={22} className="bell-icon" />
+        <span className="bell-badge">1</span>
+      </button>
+
+      {isOpen && (
+        <div className="notification-dropdown">
+          <div className="notification-header">
+            <h3>Upcoming Mega Event</h3>
+            <button onClick={() => setIsOpen(false)} aria-label="Close" type="button"><X size={16}/></button>
+          </div>
+          <div className="notification-body">
+            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--muted)' }}>3rd Mahayudh Chess Championship</p>
+            <a 
+              href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%203rd%20Mahayudh%20Chess%20Championship" 
+              target="_blank" 
+              rel="noreferrer"
+              style={{ display: 'block', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--gold)', background: '#000' }}
+            >
+              <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh Event" style={{ width: '100%', display: 'block', objectFit: 'contain' }} />
+            </a>
+            <p style={{ margin: '10px 0 0', fontSize: '0.85rem', color: 'var(--gold-light)', textAlign: 'center' }}>Click poster to participate on WhatsApp!</p>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
