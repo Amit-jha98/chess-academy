@@ -266,8 +266,8 @@ const testimonials = [
 
 const studentAchievements = [
   {
-    title: 'Vivaan secured 1st position in Blitz and 2nd in Rapid U-11 at Bareilly Open Chess Tournament',
-    description: `${academyName} congratulates Vivaan for his outstanding performance at the Bareilly Open Chess Tournament, winning 1st in Blitz and 2nd in Rapid U-11.`,
+    title: 'Vivaan secured 1st position in Blitz and 2nd in Rapid U-11 at Bareilly Open FIDE Rated Chess Tournament',
+    description: `${academyName} congratulates Vivaan for his outstanding performance at the Bareilly Open FIDE Rated Chess Tournament, winning 1st in Blitz and 2nd in Rapid U-11.`,
     image: '/Photos/Vivaan.png',
     rank: 'Other',
     tag: 'Tournament',
@@ -339,6 +339,13 @@ const studentAchievements = [
     title: 'Ayaan celebrated a strong chess tournament performance',
     description: `${academyName} celebrates Ayaan for consistent tournament participation and continued growth through chess championship preparation.`,
     image: '/Photos/ayaan-chess-achievement.webp',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ayaan continues to demonstrate excellence in chess',
+    description: `${academyName} congratulates Ayaan for his continued dedication and strong performance in recent chess events.`,
+    image: '/Photos/ayaan-02.webp',
     rank: 'Other',
     tag: 'Tournament',
   },
@@ -514,8 +521,8 @@ const risingStars = [
   },
   {
     name: 'Vivaan Varoon',
-    rank: 'State', 
-    description: 'Bareilly Open Chess Tournament — 1st (Blitz U-11) & 2nd (Rapid U-11)',
+    rank: 'FIDE Tournament', 
+    description: 'Bareilly Open FIDE Rated Chess Tournament — 1st (Blitz U-11) & 2nd (Rapid U-11)',
     image: '/Photos/Vivaan.png',
   },
   {
@@ -595,6 +602,12 @@ const risingStars = [
     rank: 'Tournament',
     description: '1st Position - Vidhaan Interschool Chess Championship',
     image: '/Photos/ayaan-vidhaan-interschool-champion.webp',
+  },
+  {
+    name: 'Ayaan',
+    rank: 'Tournament',
+    description: 'Continued Excellence in Chess Events',
+    image: '/Photos/ayaan-02.webp',
   },
   {
     name: 'Dhwanika',
@@ -2156,9 +2169,9 @@ function AchievementPopup({ activePage }) {
     {
       image: "/Photos/Vivaan.png",
       name: "VIVAAN",
-      desc1: <>On his Outstanding Performance at<br/><strong>BAREILLY OPEN CHESS TOURNAMENT</strong><br/><strong>1st</strong> in BLITZ U-11 & <strong>2nd</strong> in RAPID U-11!</>,
+      desc1: <>On his Outstanding Performance at<br/><strong>BAREILLY OPEN FIDE RATED CHESS TOURNAMENT</strong><br/><strong>1st</strong> in BLITZ U-11 & <strong>2nd</strong> in RAPID U-11!</>,
       desc2: "\"Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!\"",
-      whatsappText: "Heartiest Congratulations Vivaan for your outstanding performance at Bareilly Open Chess Tournament!",
+      whatsappText: "Heartiest Congratulations Vivaan for your outstanding performance at Bareilly Open FIDE Rated Chess Tournament!",
     },
     {
       image: "/Photos/vanij-champion.webp",
