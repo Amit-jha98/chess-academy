@@ -2179,6 +2179,13 @@ function AchievementPopup({ activePage }) {
       desc1: <>On becoming the <strong>CHAMPION</strong> in <strong>UNDER 12 CATEGORY</strong><br/>at the ST. TERESA CHESS TOURNAMENT!</>,
       desc2: "\"Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!\"",
       whatsappText: "Heartiest Congratulations Vanij for becoming the Champion in Under 12 Category at St. Teresa Chess Tournament!",
+    },
+    {
+      image: "/Photos/ayaan-02.webp",
+      name: "AYAAN",
+      desc1: <>On his Outstanding Performance and<br/><strong>CONTINUED EXCELLENCE</strong><br/>in recent Chess Events!</>,
+      desc2: "\"Your talent, hard work and determination have brought you this well-deserved victory. Keep shining Champion!\"",
+      whatsappText: "Heartiest Congratulations Ayaan for your outstanding performance in recent Chess Events!",
     }
   ];
 
