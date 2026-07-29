@@ -266,6 +266,13 @@ const testimonials = [
 
 const studentAchievements = [
   {
+    title: 'Adwita became Champion in under 11 girls category at NOIDA SCRA',
+    description: `${academyName} proudly congratulates Adwita for becoming the Champion in the under 11 girls category at NOIDA SCRA. We are proud of you! Keep playing, keep growing, keep inspiring!`,
+    image: '/Photos/adwita-champion.webp',
+    rank: 'District',
+    tag: 'Tournament',
+  },
+  {
     title: 'Vivaan secured 1st position in Blitz and 2nd in Rapid U-11 at Bareilly Open FIDE Rated Chess Tournament',
     description: `${academyName} congratulates Vivaan for his outstanding performance at the Bareilly Open FIDE Rated Chess Tournament, winning 1st in Blitz and 2nd in Rapid U-11.`,
     image: '/Photos/Vivaan.png',
@@ -973,8 +980,8 @@ function RisingStarsSection({ goTo }) {
           <div className="decorative-line">Current Champions & Rank Holders</div>
         </div>
         <div className="stars-grid">
-          {risingStars.map((star) => (
-            <div className="star-card" key={star.name}>
+          {risingStars.map((star, index) => (
+            <div className="star-card" key={`${star.name}-${index}`}>
               <img
                 className="star-card-image"
                 src={star.image}
@@ -1281,8 +1288,8 @@ function TestimonialsPreview({ goTo }) {
           </button>
         </div>
         <div className="testimonial-grid preview">
-          {testimonials.slice(0, 3).map((item) => (
-            <TestimonialCard key={item.name} item={item} />
+          {testimonials.slice(0, 3).map((item, index) => (
+            <TestimonialCard key={`${item.name}-${index}`} item={item} />
           ))}
         </div>
       </div>
@@ -1741,8 +1748,8 @@ function TestimonialsPage({ goTo }) {
         <HierarchicalSection
           data={testimonials}
           gridClassName="testimonial-grid"
-          renderItem={(item) => (
-            <TestimonialCard key={item.name} item={item} />
+          renderItem={(item, idx) => (
+            <TestimonialCard key={`${item.name}-${idx}`} item={item} />
           )}
         />
       </section>
@@ -1918,8 +1925,9 @@ function ContactPage({ formState, setFormState, handleSubmit, status, submitting
           <article>
             <MapPin size={22} />
             <div>
-              <h2>Academy Location</h2>
+              <h2>Academy Locations</h2>
               <p>Rajnagar Extension, Ghaziabad</p>
+              <p>ICON School, Wave City (Sat & Sun, Starting this August)</p>
             </div>
           </article>
           <article>
@@ -2053,7 +2061,7 @@ function Footer() {
           <h2>Contact Us</h2>
           <a href="tel:+918076940504">+91 8076 940 504</a>
           <a href="mailto:riturajchessacademy@gmail.com">riturajchessacademy@gmail.com</a>
-          <span>{academyName}, Ghaziabad, Uttar Pradesh, India</span>
+          <span>{academyName}, Rajnagar Extension & Wave City, Ghaziabad, Uttar Pradesh, India</span>
           <a
             className="whatsapp-link"
             href="https://wa.me/918076940504"
@@ -2096,6 +2104,7 @@ function WelcomePopup() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
+    '/Photos/icon-school-wave-city.webp',
     '/Photos/pop_up_image.webp', 
     '/Photos/pop_up_image2.webp', 
   ];
