@@ -2105,8 +2105,9 @@ function WelcomePopup() {
 
   const images = [
     '/Photos/icon-school-wave-city.webp',
-    '/Photos/pop_up_image.webp', 
-    '/Photos/pop_up_image2.webp', 
+    '/Photos/4th_mahayudh_1.png', 
+    '/Photos/4th_mahayudh_2.jpg', 
+    '/Photos/4th_mahayudh_3.jpg', 
   ];
 
   useEffect(() => {
