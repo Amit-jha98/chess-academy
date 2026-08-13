@@ -901,14 +901,14 @@ function NotificationBell() {
             <button onClick={() => setIsOpen(false)} aria-label="Close" type="button"><X size={16}/></button>
           </div>
           <div className="notification-body">
-            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--muted)' }}>3rd Mahayudh Chess Championship</p>
+            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--muted)' }}>4th Mahayudh Chess Championship</p>
             <a 
-              href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%203rd%20Mahayudh%20Chess%20Championship" 
+              href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%204th%20Mahayudh%20Chess%20Championship" 
               target="_blank" 
               rel="noreferrer"
               style={{ display: 'block', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--gold)', background: '#000' }}
             >
-              <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh Event" style={{ width: '100%', display: 'block', objectFit: 'contain' }} />
+              <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh Event" style={{ width: '100%', display: 'block', objectFit: 'contain' }} />
             </a>
             <p style={{ margin: '10px 0 0', fontSize: '0.85rem', color: 'var(--gold-light)', textAlign: 'center' }}>Click poster to participate on WhatsApp!</p>
           </div>
@@ -1385,11 +1385,12 @@ function MahayudhNotification() {
       <div className="section-wrap">
         <div className="section-heading" style={{ textAlign: 'center', marginBottom: '30px' }}>
           <span className="section-kicker">UPCOMING MEGA EVENT</span>
-          <h2>3RD MAHAYUDH CHESS CHAMPIONSHIP</h2>
+          <h2>4TH MAHAYUDH CHESS CHAMPIONSHIP</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-          <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh Poster 1" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
-          <img src="/Photos/3rd_mahayudh2.png" alt="3rd Mahayudh Poster 2" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh Poster 1" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/4th_mahayudh_2.jpg" alt="4th Mahayudh Poster 2" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/4th_mahayudh_3.jpg" alt="4th Mahayudh Poster 3" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
         </div>
       </div>
     </section>
@@ -2311,10 +2312,14 @@ function MahayudhPopup() {
         </button>
         
         <h2 style={{ color: 'var(--gold)', marginBottom: '15px', fontSize: '1.8rem', fontFamily: 'var(--heading-font)', fontWeight: '900', textTransform: 'uppercase' }}>
-          3rd Mahayudh<br/>Chess Championship
+          4th Mahayudh<br/>Chess Championship
         </h2>
         
-        <img src="/Photos/3rd_mahayudh.png" alt="3rd Mahayudh" style={{ display: 'block', margin: '0 auto 20px', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '20px' }}>
+          <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh 1" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+          <img src="/Photos/4th_mahayudh_2.jpg" alt="4th Mahayudh 2" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+          <img src="/Photos/4th_mahayudh_3.jpg" alt="4th Mahayudh 3" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+        </div>
         
         <p style={{ color: 'var(--muted)', marginBottom: '20px', fontSize: '1rem' }}>
           Join the ultimate battle of minds! Register now to secure your spot.
@@ -2322,7 +2327,7 @@ function MahayudhPopup() {
         
         <a
           className="primary-button"
-          href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%203rd%20Mahayudh%20Chess%20Championship"
+          href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%204th%20Mahayudh%20Chess%20Championship"
           target="_blank"
           rel="noreferrer"
           style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
