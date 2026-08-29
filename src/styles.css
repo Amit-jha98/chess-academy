@@ -2878,3 +2878,10 @@ img {
 .notification-body {
   padding: 15px;
 }
+
+/* Ensure line breaks render correctly for achievement descriptions */
+.gallery-card p,
+.achievement-card p,
+.popup-content p {
+  white-space: pre-wrap;
+}

@@ -266,6 +266,97 @@ const testimonials = [
 
 const studentAchievements = [
   {
+    title: 'Vaidika Sapra & Arna Mall - 1st Position in Team Event at CBSE Cluster',
+    description: `🏆 A PROUD MOMENT FOR RITURAJ ACADEMY!♟️✨\n\nHeartiest congratulations to our young chess champions Vaidika Sapra & Arna Mall for their outstanding performance at the CBSE Cluster! 🏆\n\n🥇 CBSE Cluster – 1st Position in Team Event\n🇮🇳 Selected for CBSE National!\n\n🌟 Board Prize Winners\n🥇 Veidika Sapra – 1st Board Prize\n🔥 Remained undefeated – not a single match lost!\n\n🥈 Arna Mall – 2nd Board Prize\n🔥 Remained undefeated – not a single match lost!\n\nA fantastic achievement that makes Rituraj Academy incredibly proud! ❤️♟️\n\nNow the next challenge awaits — CBSE NATIONAL! 🇮🇳🏆\n\nKeep training, keep believing and keep shining, champions!\nGo make Rituraj Academy proud! 💪♟️🔥\n\nRituraj Academy – Where Champions Are Made.`,
+    image: '/Photos/poster1.jpg',
+    rank: 'National',
+    tag: 'National',
+  },
+  {
+    title: 'Rituraj Academy Champions Selected for CBSE National Chess Championship 2026',
+    description: `🔥 A moment of immense pride for Rituraj Academy! ❤️\n\nOur young champions Shivansh Poddar, Sandarsh Pandey, Kavish Saxena, Vivaan, Veidika and Arna have been selected to represent their schools at the CBSE National Chess Championship 2026! 🏆🇮🇳\n\nAnd the achievements don’t stop here! 🌟\n✨ Vritti Jain — Board Prize Winner at CBSE Cluster\n🥇 Arna Mall & Vaidika Sapra — Board Prize Winner at CBSE Cluster\n\n🏆 Rituraj Academy continues to create champions at the highest level!\n\nBehind every medal is countless hours of practice, discipline, patience and the courage to keep improving. 💪♟️\n\nCongratulations, Champions! ❤️\nKeep playing. Keep learning. Keep making us proud! 🔥\n\n♟️ RITURAJ ACADEMY\nWhere Champions Are Made 🏆`,
+    image: '/Photos/poster02.jpeg',
+    rank: 'National',
+    tag: 'National',
+  },
+  {
+    title: 'Kavish Saxena came 1st in U-17 category at 4th Mahayudh Chess Championship',
+    description: `${academyName} proudly congratulates Kavish for winning the 1st position in the U-17 category at the 4th Mahayudh Chess Championship. He won a trophy, a ₹3000 cash prize, and a movie voucher.`,
+    image: '/Photos/kavish-mahayudh.jpg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Vanij Jain secured 5th position in U-11 category at 4th Mahayudh Chess Championship',
+    description: `${academyName} proudly congratulates Vanij Jain for securing the 5th position in the U-11 category at the 4th Mahayudh Chess Championship, winning a ₹1000 cash prize and a trophy.`,
+    image: '/Photos/Vanij Jain secured 5th position in u-11 category and won 1000 rs plus trophy at 4th Mahayudh Chess Championship.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Vriti Jain secured 2nd position in U-17 Girls category',
+    description: `${academyName} proudly congratulates Vriti Jain for securing the 2nd position in the U-17 girls category, winning a trophy and a chess book.`,
+    image: '/Photos/Vriti Jain secured 2nd position in u-17 girls category, won trophy and chess book.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Sandarsh Pandey came 1st in U-11 category',
+    description: `${academyName} proudly congratulates Sandarsh Pandey for coming 1st in the U-11 category, winning a ₹3000 cash prize, a trophy, and a movie voucher.`,
+    image: '/Photos/Sandarsh Pandey came 1st in u-11 category. He won 3000 cash, trophy and movie voucher.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ansh Arora won a medal in U-17 category',
+    description: `${academyName} proudly congratulates Ansh Arora for winning a medal in the U-17 category.`,
+    image: '/Photos/Ansh Arora stood won medal in u-17 category.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Arna Mall came 1st in U-11 Girls category',
+    description: `${academyName} proudly congratulates Arna Mall for coming 1st in the U-11 girls category, winning a ₹1200 cash prize and a trophy.`,
+    image: '/Photos/Arna Mall came 1st in u-11 girls category. She won 1200 cash and a trophy..jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Winners of 4th Mahayudh Chess Championship',
+    description: `Proud winners of the 4th Mahayudh Chess Championship held in Opulent Mall. ${academyName} congratulates all our students on their incredible achievements!`,
+    image: '/Photos/Winners of 4th Mahayudh Chess Championship held in Opulent Mall.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Pranav Goel came 3rd in U-10 category',
+    description: `${academyName} proudly congratulates Pranav Goel for securing the 3rd position in the U-10 category. He won a trophy and a chess book.`,
+    image: '/Photos/Pranav Goel came 3rd in u-10 category. He won trophy and a chess book..jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Nabhya Kumar Singh stood 3rd in U-11 category',
+    description: `${academyName} proudly congratulates Nabhya Kumar Singh for standing 3rd in the U-11 category. He won a ₹1500 cash prize and a trophy.`,
+    image: '/Photos/Nabhya Kumar Singh stood 3rd in u-11 category. He won 1500 cash and trophy..jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Ayaan Agarwal came 4th in U-11 category',
+    description: `${academyName} proudly congratulates Ayaan Agarwal for coming 4th in the U-11 category, winning a ₹1200 cash prize.`,
+    image: '/Photos/Ayaan Agarwal came 4th in u-11 category and won 1200 cash prize.jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
+    title: 'Kavish Saxena came 1st in U-11 category in 3rd Chess Mahayudh Rapid tournament',
+    description: `${academyName} proudly congratulates Kavish Saxena for coming 1st in the U-11 category at the 3rd Chess Mahayudh Rapid tournament. He stood first in the Blitz format and won a ₹9,500 cash prize and special gifts.`,
+    image: '/Photos/Kavish Saxena came 1st in u-11 category in 3rd Chess Mahayudh Rapid tournament. He stood first in Blitz format. He won 9,500 cash prize and special gifts..jpeg',
+    rank: 'Other',
+    tag: 'Tournament',
+  },
+  {
     title: 'Adwita became Champion in under 11 girls category at NOIDA SCRA',
     description: `${academyName} proudly congratulates Adwita for becoming the Champion in the under 11 girls category at NOIDA SCRA. We are proud of you! Keep playing, keep growing, keep inspiring!`,
     image: '/Photos/adwita-champion.webp',
@@ -897,20 +988,20 @@ function NotificationBell() {
       {isOpen && (
         <div className="notification-dropdown">
           <div className="notification-header">
-            <h3>Upcoming Mega Event</h3>
+            <h3>New Batch Alert!</h3>
             <button onClick={() => setIsOpen(false)} aria-label="Close" type="button"><X size={16}/></button>
           </div>
           <div className="notification-body">
-            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--muted)' }}>4th Mahayudh Chess Championship</p>
+            <p style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--muted)' }}>Online Beginner Batch Classes</p>
             <a 
-              href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%204th%20Mahayudh%20Chess%20Championship" 
+              href="https://wa.me/918076940504?text=I%20want%20to%20enroll%20in%20the%20Online%20Beginner%20Batch" 
               target="_blank" 
               rel="noreferrer"
               style={{ display: 'block', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--gold)', background: '#000' }}
             >
-              <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh Event" style={{ width: '100%', display: 'block', objectFit: 'contain' }} />
+              <img src="/Photos/poster3.jpeg" alt="Online Beginner Batch" style={{ width: '100%', display: 'block', objectFit: 'contain' }} />
             </a>
-            <p style={{ margin: '10px 0 0', fontSize: '0.85rem', color: 'var(--gold-light)', textAlign: 'center' }}>Click poster to participate on WhatsApp!</p>
+            <p style={{ margin: '10px 0 0', fontSize: '0.85rem', color: 'var(--gold-light)', textAlign: 'center' }}>Click to enroll via WhatsApp!</p>
           </div>
         </div>
       )}
@@ -1384,13 +1475,12 @@ function MahayudhNotification() {
     <section className="tournament-section" style={{ background: 'var(--card-bg)' }}>
       <div className="section-wrap">
         <div className="section-heading" style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <span className="section-kicker">UPCOMING MEGA EVENT</span>
-          <h2>4TH MAHAYUDH CHESS CHAMPIONSHIP</h2>
+          <span className="section-kicker">PROUD ACHIEVEMENTS</span>
+          <h2>CBSE CLUSTER & NATIONAL SELECTIONS</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-          <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh Poster 1" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
-          <img src="/Photos/4th_mahayudh_2.jpg" alt="4th Mahayudh Poster 2" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
-          <img src="/Photos/4th_mahayudh_3.jpg" alt="4th Mahayudh Poster 3" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/poster1.jpg" alt="CBSE Cluster Winners" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
+          <img src="/Photos/poster02.jpeg" alt="CBSE National Selections" style={{ width: '100%', borderRadius: '12px', border: '2px solid var(--gold)', objectFit: 'contain', background: '#000' }} />
         </div>
       </div>
     </section>
@@ -2312,28 +2402,26 @@ function MahayudhPopup() {
         </button>
         
         <h2 style={{ color: 'var(--gold)', marginBottom: '15px', fontSize: '1.8rem', fontFamily: 'var(--heading-font)', fontWeight: '900', textTransform: 'uppercase' }}>
-          4th Mahayudh<br/>Chess Championship
+          Online Beginner Batch<br/>Chess Classes
         </h2>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '20px' }}>
-          <img src="/Photos/4th_mahayudh_1.png" alt="4th Mahayudh 1" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
-          <img src="/Photos/4th_mahayudh_2.jpg" alt="4th Mahayudh 2" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
-          <img src="/Photos/4th_mahayudh_3.jpg" alt="4th Mahayudh 3" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '50vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
+          <img src="/Photos/poster3.jpeg" alt="Online Beginner Batch" style={{ display: 'block', margin: '0 auto', width: '100%', maxHeight: '65vh', objectFit: 'contain', borderRadius: '12px', border: '1px solid var(--gold)' }} />
         </div>
         
         <p style={{ color: 'var(--muted)', marginBottom: '20px', fontSize: '1rem' }}>
-          Join the ultimate battle of minds! Register now to secure your spot.
+          Start your chess journey today! Join our weekend interactive sessions.
         </p>
         
         <a
           className="primary-button"
-          href="https://wa.me/918076940504?text=I%20want%20to%20participate%20in%20the%204th%20Mahayudh%20Chess%20Championship"
+          href="https://wa.me/918076940504?text=I%20want%20to%20enroll%20in%20the%20Online%20Beginner%20Batch"
           target="_blank"
           rel="noreferrer"
           style={{ width: '100%', display: 'flex', justifyContent: 'center', boxSizing: 'border-box' }}
         >
           <img loading="lazy" src="/Photos/whatsapp_logo.webp" alt="WhatsApp" style={{ width: '24px', height: '24px', marginRight: '10px', objectFit: 'contain' }} />
-          Participate Now
+          Enroll Today
         </a>
       </div>
     </div>
